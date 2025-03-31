@@ -1,6 +1,5 @@
 @import "tailwindcss";
 
-
 .bannerBtn{
     display: flex;
     justify-content: center;
@@ -9,7 +8,7 @@
     border-radius: 4.6rem;
     background: var(--1, linear-gradient(90deg, #115DF2 -81.52%, #00E9EC 145.22%));
     width: 100%;
-    padding: 1rem 1.4rem;
+    padding: 1.1rem 2%;
 }
 .bannerBtn:hover{
     border: 0.5px solid #FFF;
@@ -20,15 +19,16 @@
 .textBtn{
     color: #000;
     font-weight: 700;
-    font-size: 1.4em;
+    font-size: 1.5rem;
 }
 .textBtnLast{
     color: #fff;
     font-weight: 700;
-    font-size: 1.4em;
+    font-size: 1.5rem;
 }
 
 .bannerBtnLast{
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -37,7 +37,8 @@
     border-radius: 4.6rem;
     z-index: 0;
     position: relative;
-    padding: 1rem 1.4rem;
+    padding: 1.1rem 1vw;
+
 }
 .bannerBtnLast::after{
     content: "";
@@ -61,9 +62,3 @@
     text-shadow: 0 0 5px #03FBFE, 0 0 15px rgba(3, 251, 254, 0.8), 2px 2px 3px rgba(0, 0, 0, 0.6);
   }
 
-@media (max-width: 480px){
-    .textBtn,
-    .textBtnLast{
-        font-size: 1.2em;
-    }
-}

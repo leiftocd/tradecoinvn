@@ -1,107 +1,105 @@
 import BannerImgLeft from '../../../../public/bannerLeft.png'
 import BannerImgRight from '../../../../public/bannerRight.png'
 import BannerLogo from '../../../../public/bannerLogo.png'
-// import BannerContentBg from '../../../../public/bannerContentBg1.png'
+import BannerContentBg from '../../../../public/bannerContentBg.png'
 import WebsiteImg from '../../../../public/website.png'
 import YoutubeImg from '../../../../public/ytb.png'
 import TwitterImg from '../../../../public/x.png'
-import BannerAllIn from '../../../../public/all-in.png'
+// import BannerAllIn from '../../../../public/all-in.png'
 
 import BannerBtn from '../../../components/bannerBtn.jsx'
 
 function Banner() {
   return (
     <>
-        <div className='banner flex flex-col py-[3rem] px-[0] bg-cover bg-center bg-repeat relative
-        max-md:py-[2.8rem]  max-md:px-[0] max-md:gap-[2rem]' 
-        style={{backgroundImage: "url(./bg.jpg)" }} >
-            <div className="flex items-center w-full justify-center ">
+    <section 
+    className=' bg-cover bg-center bg-repeat' style={{backgroundImage: "url(./bg.jpg)" }}
+    >
+        <div className='banner flex flex-col relative -mb-[1px] mx-[auto]
+        max-sm:py-[2.8rem]  max-sm:px-[0] max-sm:gap-[2rem]' 
+         >
+            <div className=" mx-[auto] res-img">
                 <img src={BannerLogo} alt="" className=' max-w-[100%]' loading='lazy'/>
             </div>
-            <div className=" flex w-full justify-around
-            max-md:gap-[3rem]
+            <div className=" flex w-full justify-center
+            max-sm:gap-[3rem]
             ">
-                <div className='  w-full flex items-center max-w-[20vw] 
-                max-md:hidden
-                i-res
+                <div className='  w-full flex items-center max-w-[20%] 
+                max-sm:hidden
                 '>
                     <img src={BannerImgLeft} alt="banner" className=' w-full ' loading='lazy'/>
                 </div>
-                    <div className=" flex items-center justify-center flex-col gap-[6rem] px-[3vw] mx-[auto]">
-                        <div className='  flex flex-col items-center
-                        max-md:gap-[1rem]'>
-                            <div className="whitespace-pre-line inline-block text-[#00E9EC] text-center 
-                                [webkit-text-stroke-width:1px] [webkit-text-stroke-color:#00E9EC] 
-                                font-poppins text-[4vw] font-bold -tracking-[1.92px] uppercase text-shadow-glow
-                                max-md:text-[2.8em] max-md:px-[8vw] s-res">
-                                    Cộng đồng Crypto
-                                    top 1 Việt Nam
-                            </div>
-                            <div className=' max-w-[14.7rem] hidden w-full items-center
-                            max-md:flex '>
-                                <img src={BannerImgLeft} alt="banner" className=' w-full' loading='lazy'/>
-                            </div>
+                <div className=" flex items-center justify-center flex-col gap-[1rem] px-[0] mx-[auto] max-w-1/2
+                max-sm:px-[0] res-w" >
+                    <div className='  flex flex-col items-center
+                    max-sm:gap-[1rem]  max-sm:px-[0rem]' >
+                        <div className="whitespace-pre-line inline-block text-[#00E9EC] text-center 
+                            [webkit-text-stroke-width:1px] [webkit-text-stroke-color:#00E9EC] leading-[100%]
+                            text-[4vw] font-[700] -tracking-[1px] uppercase text-shadow-glow font-roboto
+                            max-sm:text-[3.5rem] max-sm:px-[0] max-sm:-tracking-[1px] max-sm:text-neon" >
+                                Cộng đồng Crypto
+                                top 1 Việt Nam
                         </div>
-                        <div className='flex w-full items-center justify-evenly gap-[4vw] 
-                        max-md:gap-[2rem]'>
-                            <div className=' flex flex-col items-center justify-center gap-[4rem]  
-                            max-md:gap-[2rem]'>
-                                <div className=' flex w-full bg-cover bg-center bg-repeat relative py-[1rem] px-[1.5rem] items-center justify-center max-w-[32.7rem]
-                                max-md:pl-[1.6rem]' 
-                                style={{backgroundImage: "url(./bannerContentBg1.png)" }}
-                                >
-                                    <span className=' text-white text-[16px] font-bold '>
-                                        THAM GIA NHÓM CALL KÈO PREMIUM
-                                    </span>
-                                    <div className=' absolute z-10 right-[-19%] bottom-[-10%]'>
-                                        <img src={BannerAllIn} alt="" className=' max-w-[9.8rem]'/>
-                                    </div>
-                                    {/* <img src={BannerContentBg} alt="" className=' max-w-full absolute inset-0 -z-1' loading='lazy'/> */}
-                                </div>
-                                <div className=' flex flex-col w-full gap-[1.5rem] items-start
-                                max-md:gap-[1rem] max-md:px-[4.8rem]'>
-                                    <div className='w-full flex items-center justify-center max-w-[90%]'>
-                                        <BannerBtn href="https://go.tradecoinvn.com/link-telegram-channel" 
-                                            text="Channel Telegram TradeCoinVN"
-                                            className=" bannerBtn"
-                                            spanBtn="textBtn max-md:text-[1.2em]"
-                                        />
-                                    </div>
-                                    <div className=' w-full flex items-center justify-center max-w-[90%]'>
-                                        <BannerBtn href="https://www.facebook.com/groups/tradervietnam" text="Group Facebook TradeCoinVN" 
-                                            className=" bannerBtn"
-                                            spanBtn="textBtn max-md:text-[1.2em]"
-                                        />
-                                    </div>
-                                    <div className=' w-full flex items-center justify-center max-w-[90%]'>
-                                        <BannerBtn href="https://go.tradecoinvn.com/link-telegram-support" text="Liên Hệ Support Vào Nhóm Premium" 
-                                            className=" bannerBtnLast w-full" 
-                                            spanBtn="  textBtnLast max-md:text-[1.2em]"
-                                        />
-                                    </div>
-                                </div>
-                            </div>
-                            <div className='flex flex-col gap-[2rem] max-md:hidden'>
-                                <a href="https://tradecoinvn.net/" className='  flex items-end '>
-                                    <img src={WebsiteImg} alt="" className=' w-full max-w-[25.4rem]'  />
-                                </a>
-                                <a href="https://www.youtube.com/@tradecoinvn_media" className='  flex items-end '>
-                                    <img src={YoutubeImg} alt="" className=' w-full max-w-[25.4rem]' />
-                                </a>
-                                <a href="https://x.com/TCVNcommunity" className='  flex items-end '>
-                                    <img src={TwitterImg} alt="" className=' w-full max-w-[25.4rem]' />
-                                </a>
-                            </div>
+                        <div className=' max-w-[14.7rem] hidden w-full items-center
+                        max-sm:flex '>
+                            <img src={BannerImgLeft} alt="banner" className=' w-full' loading='lazy'/>
                         </div>
                     </div>
-                <div className="  w-full flex items-center max-w-[20vw] 
-                max-md:hidden
-                i-res
+                    <div className='flex w-full items-center justify-center gap-[0] 
+                    max-sm:gap-[2rem] '>
+                        <div className='w-full flex flex-col items-center justify-center gap-[1.5rem]  px-[1rem] 
+                        max-sm:gap-[1.5] '>
+                            <div className=' flex items-center justify-center ' 
+                            >
+                                <img src={BannerContentBg} alt="" className='max-w-[100%]' loading='lazy'/>
+                            </div>
+                            <div className=' flex flex-col w-full gap-[1rem] items-start pr-[5%] 
+                            max-sm:gap-[1rem] max-sm:px-[0]'>
+                                <BannerBtn href="https://go.tradecoinvn.com/link-telegram-channel" 
+                                    text="Channel Telegram TradeCoinVN"
+                                    className=" bannerBtn flex items-center justify-center max-w-[26.5rem] 
+                                        max-sm:w-[70%] max-sm:max-w-[70%]
+                                    "
+                                    spanBtn="textBtn  
+                                    max-sm:text-[1.2em]"
+                                />
+                        
+                                <BannerBtn href="https://www.facebook.com/groups/tradervietnam" text="Group Facebook TradeCoinVN" 
+                                    className=" bannerBtn flex items-center justify-center max-w-[26.5rem] 
+                                        max-sm:w-[70%] max-sm:max-w-[70%]"
+                                    spanBtn="textBtn  
+                                    max-sm:text-[1.2em] "
+                                />
+                        
+                                <BannerBtn href="https://go.tradecoinvn.com/link-telegram-support" text="Liên Hệ Support TradeCoinVN" 
+                                    className=" bannerBtnLast  py-[1rem] flex items-center justify-center max-w-[26.5rem] 
+                                        max-sm:w-[70%] max-sm:max-w-[70%]" 
+                                    spanBtn=" textBtnLast max-sm:text-[1.2em]"
+                                />
+                            </div>
+                        </div>
+                        <div className='flex flex-col gap-[1.6rem] w-full h-[100%] items-center justify-center
+                        max-sm:hidden'>
+                            <a href="https://tradecoinvn.net/" className=' w-full flex max-w-[76%]'>
+                                <img src={WebsiteImg} alt="" className=' w-full max-w-[40rem]'  />
+                            </a>
+                            <a href="https://www.youtube.com/@tradecoinvn_media" className=' max-w-[76%] flex w-full'>
+                                <img src={YoutubeImg} alt="" className=' w-full max-w-[40rem]' />
+                            </a>
+                            <a href="https://x.com/TCVNcommunity" className='  flex w-full max-w-[76%]'>
+                                <img src={TwitterImg} alt="" className=' w-full max-w-[40rem]' />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div className="  w-full flex items-center max-w-[20%] 
+                max-sm:hidden
                 ">
                     <img src={BannerImgRight} alt="banner" className=' w-full ' loading='lazy'/>
                 </div>
             </div>
         </div>
+    </section>
     </>
   )
 }
