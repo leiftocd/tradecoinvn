@@ -1,11 +1,10 @@
 import BannerImgLeft from '../../../../public/bannerLeft.png'
 import BannerImgRight from '../../../../public/bannerRight.png'
-import BannerLogo from '../../../../public/bannerLogo.png'
+import BannerLogo from '../../../../public/bannerlogo.png'
 import BannerContentBg from '../../../../public/bannerContentBg.png'
 import WebsiteImg from '../../../../public/website.png'
 import YoutubeImg from '../../../../public/ytb.png'
 import TwitterImg from '../../../../public/x.png'
-// import BannerAllIn from '../../../../public/all-in.png'
 
 import BannerBtn from '../../../components/bannerBtn.jsx'
 
