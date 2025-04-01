@@ -1,135 +1,151 @@
-import BingX from '../../../../public/bingX.png'
-import ByBit from '../../../../public/bybit.png'
-import Binance from '../../../../public/binance.png'
-import BitGet from '../../../../public/bitget.png'
-import Okx from '../../../../public/okx.png'
-import Mexc from '../../../../public/mexc.png'
-import Smoker from '../../../../public/smoker.png'
-import Build from '../../../../public/build.png'
+import { useState } from "react";
+import { Card } from "../../../components/Card/Card";
+import { Slide } from "../../../components/Slide/Slide";
+import "swiper/css/free-mode";
+import { FreeMode } from "swiper/modules";
 
+import "./market.css";
 function Market() {
+  const images = [
+    "/hashkey.png",
+    "/okx.png",
+    "/mexc.png",
+    "/byBit.png",
+    "/binance.png",
+    "/bitget.png",
+  ];
+
+  const [activeIndex, setActiveIndex] = useState(0);
   return (
-    <div className='w-full mx-[auto] flex py-[8rem]  px-[24rem] gap-[6vw]  justify-center  ' style={{backgroundImage: "url(./bg.jpg)" }}>
-        <div className=" flex items-end gap-[6vw] relative">
-            <div className=' flex text-white font-bold text-[40px] absolute top-[10%] left-0 z-10'>
+    <section>
+
+        {/* MARKET SECTION: START */}
+        <div className="w-full h-full mx-[auto] flex py-[3rem] justify-center max-w-[108rem] px-[3rem] market-res">
+          <div className="warpper-content gap-[2rem] flex market-res">
+            <div className="col-left">
+              <div className="w-full relative">
+                <div className="pt-[18rem]" />
+                <div>
+                  <h2 className="text-[4.48rem] font-bold leading-[1.3] mb-[0.5em] text-white">
+                    LÀM QUEN THỊ TRƯỜNG BẰNG CÁCH TẠO TÀI KHOẢN SÀN GIAO DỊCH
+                  </h2>
+                </div>
+                <div className="w-full flex flex-row gap-[5rem] justify-center market-col_res">
+                  <div className="p-[0_1.5rem_3rem] ">
+                    <div className="pt-[15vw]" />
+                    <div className="relative">
+                      <Card
+                        img="/bingX.png"
+                        title="Đăng kí tài khoản BingX"
+                        description="Mã giới thiệu: 19986"
+                      />
+                      <img
+                        className="absolute aspect-square max-w-[16.4rem] -top-[50%] -translate-x-1/2 translate-y-1/2 left-[-5%]"
+                        src="/smoker.png"
+                      />
+                    </div>
+                    <div>
+                      <Card
+                        img="/hashkey.png"
+                        title="Đăng kí tài khoản Hashkey"
+                        description="Mã giới thiệu: 19986"
+                      />
+                    </div>
+                  </div>
+                  <div className="p-[0_1.5rem_3rem]">
+                    <div className="pt-[5vw]" />
+                    <div>
+                      <Card
+                        img="/okx.png"
+                        title="Đăng kí tài khoản OKX"
+                        description="Mã giới thiệu: 19986"
+                      />
+                    </div>
+                    <div>
+                      <Card
+                        img="/mexc.png"
+                        title="Đăng kí tài khoản MEXC"
+                        description="Mã giới thiệu: 19986"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="col-right">
+              <div className="w-full">
+                <div className="p-[0_1.5rem_3rem]">
+                  <div className="relative">
+                    <Card
+                      img="/byBit.png"
+                      title="Đăng kí tài khoản ByBit"
+                      description="Mã giới thiệu: 19986"
+                    />
+                  </div>
+                  <div>
+                    <Card
+                      img="/binance.png"
+                      title="Đăng kí tài khoản Binance"
+                      description="Mã giới thiệu: 19986"
+                    />
+                  </div>
+                  <div>
+                    <Card
+                      img="/bitget.png"
+                      title="Đăng kí tài khoản BitGet"
+                      description="Mã giới thiệu: 19986"
+                    />
+                  </div>
+                  <div>
+                    <Card imgOnly img="/build.png" />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Resposive */}
+            <div className="market-slide">
+              <h2 className="text-[3.36rem] font-bold leading-[1.3] mb-[1.68rem] text-white">
                 LÀM QUEN THỊ TRƯỜNG BẰNG CÁCH TẠO TÀI KHOẢN SÀN GIAO DỊCH
-            </div>
-            <div className=' absolute top-[50%] -left-[15%] -translate-y-1/2'>
-                <img src={Smoker} alt="" className=' max-w-[50%]'/>
-            </div>
-            <div className='flex flex-col w-full'>
-                <div className=" flex flex-col justify-center items-center 
-                bg-gradient-to-b from-[rgba(0,233,236,0.6)] to-[rgba(0,0,0,0.6)] 
-                px-[2rem] py-[2rem] rounded-[1.6rem] gap-[1rem]">
-                    <div className=' w-full flex items-center justify-center'>
-                        <span className=' text-white font-bold text-[16px] max-w-[70%] text-center'>Đăng kí tài khoản BingX</span>    
-                    </div>
-                    <div className=' max-w-[14.7rem]'>
-                        <img src={BingX} alt="" />
-                    </div>
-                    <div className=''>
-                        <p className='  text-white font-[400] text-[14px]'> Mã giới thiệu: 19986</p>
-                    </div>
+              </h2>
+
+              <div className="relative w-full p-[0_15px_30px]">
+                <img
+                  className="absolute aspect-square max-w-[18%] -top-[2rem] -left-[2.5rem] z-10 left-img"
+                  src="/smoker.png"
+                />
+                <Slide.Root
+                  slidesPerView={3}
+                  spaceBetween={20}
+                  freeMode={true}
+                  modules={[FreeMode]}
+                  onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
+                  className="slide-content"
+                >
+                  {images.map((item, index) => (
+                    <Slide.Item key={item}>
+                      <div className="p-[1rem]">
+                        <Card
+                          key={item}
+                          img={item}
+                          title="Đăng kí tài khoản ByBit"
+                          description="Mã giới thiệu: 19986"
+                          className={index === activeIndex && "active"}
+                        />
+                      </div>
+                    </Slide.Item>
+                  ))}
+                </Slide.Root>
+                <div className="w-full flex justify-end">
+                  <Card className='max-w-[12.5rem] h-[12.5rem]' imgOnly img="/build.png" />
                 </div>
-                <div className=" flex flex-col justify-center items-center 
-                bg-gradient-to-b from-[rgba(0,233,236,0.6)] to-[rgba(0,0,0,0.6)] 
-                px-[2rem] py-[2rem] rounded-[1.6rem] gap-[1rem]">
-                    <div className=' w-full flex items-center justify-center'>
-                        <span className=' text-white font-bold text-[16px] max-w-[70%] text-center'>Đăng kí tài khoản BingX</span>    
-                    </div>
-                    <div className=' max-w-[14.7rem]'>
-                        <img src={BingX} alt="" />
-                    </div>
-                    <div className=''>
-                        <p className='  text-white font-[400] text-[14px]'> Mã giới thiệu: 19986</p>
-                    </div>
-                </div>
+              </div>
             </div>
-            <div className='flex flex-col pb-[10rem] w-full'>
-                <div className=" flex flex-col justify-center items-center 
-                bg-gradient-to-b from-[rgba(0,233,236,0.6)] to-[rgba(0,0,0,0.6)] 
-                px-[2rem] py-[2rem] rounded-[1.6rem] gap-[1rem]">
-                    <div className=' w-full flex items-center justify-center'>
-                        <span className=' text-white font-bold text-[16px] max-w-[70%] text-center'>Đăng kí tài khoản 
-                        OKX</span>    
-                    </div>
-                    <div className=' max-w-[14.7rem]'>
-                        <img src={Okx} alt="" />
-                    </div>
-                    <div className=''>
-                        <p className='  text-white font-[400] text-[14px]'> Mã giới thiệu: 19986</p>
-                    </div>
-                </div>
-                <div className=" flex flex-col justify-center items-center 
-                bg-gradient-to-b from-[rgba(0,233,236,0.6)] to-[rgba(0,0,0,0.6)] 
-                px-[2rem] py-[2rem] rounded-[1.6rem] gap-[1rem]">
-                    <div className=' w-full flex items-center justify-center'>
-                        <span className=' text-white font-bold text-[16px] max-w-[70%] text-center'>Đăng kí tài khoản 
-                        MEXC</span>    
-                    </div>
-                    <div className=' max-w-[14.7rem]'>
-                        <img src={Mexc} alt="" />
-                    </div>
-                    <div className=''>
-                        <p className='  text-white font-[400] text-[14px]'> Mã giới thiệu: 19986</p>
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
-        <div className=" flex items-end gap-[1rem] pb-[20rem] pr-[] p">
-            <div className='flex flex-col gap-[2rem]'>
-                <div className=" flex flex-col justify-center items-center 
-                bg-gradient-to-b from-[rgba(0,233,236,0.6)] to-[rgba(0,0,0,0.6)] 
-                px-[2rem] py-[2rem] rounded-[1.6rem] gap-[1rem]
-                ">
-                    <div className=' w-full flex items-center justify-center'>
-                        <span className=' text-white font-bold text-[16px] max-w-[70%] text-center'>Đăng kí tài khoản 
-                        BYBIT</span>    
-                    </div>
-                    <div className=' max-w-[14.7rem]'>
-                        <img src={ByBit} alt="" />
-                    </div>
-                    <div className=''>
-                        <p className='  text-white font-[400] text-[14px]'> Mã giới thiệu: 19986</p>
-                    </div>
-                </div>
-                <div className=" flex flex-col justify-center items-center 
-                bg-gradient-to-b from-[rgba(0,233,236,0.6)] to-[rgba(0,0,0,0.6)] 
-                px-[2rem] py-[2rem] rounded-[1.6rem] gap-[1rem]
-                ">
-                    <div className=' w-full flex items-center justify-center'>
-                        <span className=' text-white font-bold text-[16px] max-w-[70%] text-center'>Đăng kí tài khoản 
-                        Binance</span>    
-                    </div>
-                    <div className=' max-w-[14.7rem]'>
-                        <img src={Binance} alt="" />
-                    </div>
-                    <div className=''>
-                        <p className='  text-white font-[400] text-[14px]'> Mã giới thiệu: 19986</p>
-                    </div>
-                </div>
-                <div className=" flex flex-col justify-center items-center 
-                bg-gradient-to-b from-[rgba(0,233,236,0.6)] to-[rgba(0,0,0,0.6)] 
-                px-[2rem] py-[2rem] rounded-[1.6rem] gap-[1rem]
-                ">
-                    <div className=' w-full flex items-center justify-center'>
-                        <span className=' text-white font-bold text-[16px] max-w-[70%] text-center'>Đăng kí tài khoản 
-                        Bitget</span>    
-                    </div>
-                    <div className=' max-w-[147px]'>
-                        <img src={BitGet} alt="" />
-                    </div>
-                    <div className=''>
-                        <p className='  text-white font-[400] text-[14px]'> Mã giới thiệu: 19986</p>
-                    </div>
-                </div>
-                <div className='max-w-33rem'>
-                    <img src={Build} alt="" />
-                </div>
-            </div>
-        </div>
-    </div>
-  )
+    </section>
+
+  );
 }
 
-export default Market
+export default Market;

@@ -12,9 +12,7 @@ import BannerBtn from '../../../components/bannerBtn.jsx'
 function Banner() {
   return (
     <>
-    <section 
-    className=' bg-cover bg-center bg-repeat' style={{backgroundImage: "url(./bg.jpg)" }}
-    >
+    <section >
         <div className='banner flex flex-col relative -mb-[1px] mx-[auto]
         max-sm:py-[2.8rem]  max-sm:px-[0] max-sm:gap-[2rem]' 
          >
@@ -24,7 +22,7 @@ function Banner() {
             <div className=" flex w-full justify-center
             max-sm:gap-[3rem]
             ">
-                <div className='  w-full flex items-center max-w-[20%] 
+                <div className=' banner-img w-full flex items-center max-w-[20%] 
                 max-sm:hidden
                 '>
                     <img src={BannerImgLeft} alt="banner" className=' w-full ' loading='lazy'/>
@@ -58,7 +56,7 @@ function Banner() {
                                 <BannerBtn href="https://go.tradecoinvn.com/link-telegram-channel" 
                                     text="Channel Telegram TradeCoinVN"
                                     className=" bannerBtn flex items-center justify-center max-w-[26.5rem] 
-                                        max-sm:w-[70%] max-sm:max-w-[70%]
+                                    
                                     "
                                     spanBtn="textBtn  
                                     max-sm:text-[1.2em]"
@@ -66,14 +64,14 @@ function Banner() {
                         
                                 <BannerBtn href="https://www.facebook.com/groups/tradervietnam" text="Group Facebook TradeCoinVN" 
                                     className=" bannerBtn flex items-center justify-center max-w-[26.5rem] 
-                                        max-sm:w-[70%] max-sm:max-w-[70%]"
+                                    "
                                     spanBtn="textBtn  
                                     max-sm:text-[1.2em] "
                                 />
                         
                                 <BannerBtn href="https://go.tradecoinvn.com/link-telegram-support" text="Liên Hệ Support TradeCoinVN" 
                                     className=" bannerBtnLast  py-[1rem] flex items-center justify-center max-w-[26.5rem] 
-                                        max-sm:w-[70%] max-sm:max-w-[70%]" 
+                                    " 
                                     spanBtn=" textBtnLast max-sm:text-[1.2em]"
                                 />
                             </div>
@@ -92,7 +90,7 @@ function Banner() {
                         </div>
                     </div>
                 </div>
-                <div className="  w-full flex items-center max-w-[20%] 
+                <div className=" banner-img w-full flex items-center max-w-[20%] 
                 max-sm:hidden
                 ">
                     <img src={BannerImgRight} alt="banner" className=' w-full ' loading='lazy'/>
