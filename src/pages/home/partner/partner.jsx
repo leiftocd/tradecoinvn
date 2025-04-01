@@ -1,7 +1,7 @@
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import useIsomorphicLayoutEffect from "use-isomorphic-layout-effect";
 import { Slide } from "../../../components/Slide/Slide";
-import '../patner/patner.css'
+import './partner.css'
 import { useRef, useState } from "react";
 
 const Partner = () => {

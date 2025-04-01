@@ -15,6 +15,7 @@ body {
   min-height: 100vh;
   display: flex;
   justify-content: center;
+  position: relative;
 }
 #root{
   width: 100%;
@@ -76,7 +77,7 @@ section{
     font-size: 2rem;
   } */
 }
-@media (max-width: 1200){
+@media (max-width: 1200px){
   .textBtn,
   .textBtnLast{
       font-size: 1.2em;
@@ -86,6 +87,9 @@ section{
   }
   .res-img{
     max-height: 6.4rem;
+  }
+  .footer-res{
+    padding: 0 5% !important;
   }
 }
 @media (max-width: 1080px){
@@ -165,6 +169,27 @@ section{
   .benefit-tit{
     font-size: 4vw;
   }
+  .footer-res{
+    padding: 0 4% !important;
+  }
+  .btn-footer{
+    padding: 0;
+  }
+  .btn-footer button{
+    padding: .5rem;
+  }
+  .btn-footer button span{
+    font-size: 1.2rem;
+  }
+  .swiper-button-next-1,
+  .swiper-button-next-2,
+  .swiper-button-prev-1,
+  .swiper-button-prev-2{
+    transform: translateY(0%) !important;
+  }
+  .slide-res{
+    padding: 0;
+  }
 
 }
 @media (max-width: 600px){
@@ -203,9 +228,21 @@ section{
     justify-content: center;
     position: absolute;
     top: 5%;
-    /* transform: translate(0, -50%); */
     right: 0rem;
     z-index: 10;
+  }
+  .footer-res{
+    flex-direction: column;
+  }
+  .footer-res span{
+    font-size: 6vw !important;
+    text-align: start;
+  }
+  .btn-footer button{
+    padding: 1.5rem;
+  }
+  .btn-footer button span{
+    font-size: 2.8rem !important;
   }
 }
 @media (max-width: 480px){
@@ -238,5 +275,19 @@ section{
   }
   .market-slide > div{
     padding: 0 !important;
+  }
+  #Footer .f-top,
+  #Footer .f-bot{
+    flex-direction: column !important;
+  }
+  .f-span_res{
+    text-align: center;
+    font-size: 4vw !important;
+  }
+  .btn-footer button{
+    padding: 1rem;
+  }
+  .btn-footer button span{
+    font-size: 2rem !important;
   }
 }
