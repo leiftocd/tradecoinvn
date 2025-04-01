@@ -1,20 +1,10 @@
-import { useState } from "react";
 import { Card } from "../../../components/Card/Card";
 import { Slide } from "../../../components/Slide/Slide";
 import "swiper/css/free-mode";
 import { FreeMode } from "swiper/modules";
 import "./market.css";
 function Market() {
-  const images = [
-    "/hashkey.png",
-    "/okx.png",
-    "/mexc.png",
-    "/byBit.png",
-    "/binance.png",
-    "/bitget.png",
-  ];
 
-  const [activeIndex, setActiveIndex] = useState(0);
   return (
     <section>
 
@@ -131,22 +121,79 @@ function Market() {
                   freeMode={true}
                   modules={[FreeMode]}
                   loop={true}
-                  onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
                   className="slide-content"
                 >
-                  {images.map((item, index) => (
-                    <Slide.Item key={item}>
-                      <div className="p-[1rem]">
+                    
+                    <Slide.Item >
+                      <div className="p-[1rem] mb-card">
                         <Card
-                          key={item}
-                          img={item}
-                          title="Đăng kí tài khoản ByBit"
+                          img="/byBit.png"
+                          title="Đăng kí tài khoản BYBIT"
                           description="Mã giới thiệu: 19986"
-                          className={index === activeIndex && "active"}
+                          href="https://go.tradecoinvn.com/bybit"
                         />
                       </div>
                     </Slide.Item>
-                  ))}
+                    <Slide.Item >
+                      <div className="p-[1rem] mb-card">
+                        <Card
+                          img="/binance.png"
+                          title="Đăng kí tài khoản Binance"
+                          description="Mã giới thiệu: 19986"
+                          href="https://go.tradecoinvn.com/Binance"
+                        />
+                      </div>
+                    </Slide.Item>
+                    <Slide.Item >
+                      <div className="p-[1rem] mb-card">
+                        <Card
+                          img="/bitget.png"
+                          title="Đăng kí tài khoản BitGet"
+                          description="Mã giới thiệu: 19986"
+                          href="https://go.tradecoinvn.com/bitget"
+                        />
+                      </div>
+                    </Slide.Item>
+                    <Slide.Item >
+                      <div className="p-[1rem] mb-card">
+                        <Card
+                          img="/okx.png"
+                          title="Đăng kí tài khoản OkX"
+                          description="Mã giới thiệu: 19986"
+                          href="https://go.tradecoinvn.com/okx"
+                        />
+                      </div>
+                    </Slide.Item>
+                    <Slide.Item >
+                      <div className="p-[1rem] mb-card">
+                        <Card
+                          img="/mexc.png"
+                          title="Đăng kí tài khoản Mexc"
+                          description="Mã giới thiệu: 19986"
+                          href="https://go.tradecoinvn.com/mexc"
+                        />
+                      </div>
+                    </Slide.Item>
+                    <Slide.Item >
+                      <div className="p-[1rem] mb-card ">
+                        <Card
+                          img="/bingX.png"
+                          title="Đăng kí tài khoản BingX"
+                          description="Mã giới thiệu: 19986"
+                          href="https://go.tradecoinvn.com/bingx"
+                        />
+                      </div>
+                    </Slide.Item>
+                    <Slide.Item >
+                      <div className="p-[1rem] mb-card">
+                        <Card
+                          img="/hashkey.png"
+                          title="Đăng kí tài khoản Hashkey"
+                          description="Mã giới thiệu: 19986"
+                          href="https://go.tradecoinvn.com/hashkey"
+                        />
+                      </div>
+                    </Slide.Item>
                 </Slide.Root>
                 <div className="w-full flex justify-end">
                   <Card className='max-w-[12.5rem] h-[12.5rem]' imgOnly img="/build.png" />

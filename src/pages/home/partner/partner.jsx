@@ -38,7 +38,7 @@ const Partner = () => {
           </div>
           <div className="slide-res w-full p-[0_1.5rem_3rem] glow-slide">
             <div className="p-[20px] w-full relative">
-              <h3 className="text-[2rem] text-white font-bold text-center mb-[1rem]">
+              <h3 className="text-[2rem] text-white font-bold text-center my-[1rem]">
                 Exchange Partners
               </h3>
               <Slide.Root
@@ -138,7 +138,7 @@ const Partner = () => {
 
           <div className="slide-res w-full p-[0_1.5rem_3rem] glow-slide">
             <div className="p-[20px] w-full relative">
-              <h3 className="text-[2rem] text-white font-bold text-center mb-[1rem]">
+              <h3 className="text-[2rem] text-white font-bold text-center my-[1rem]">
                 Partners
               </h3>
               <Slide.Root
