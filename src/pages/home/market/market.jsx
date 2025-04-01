@@ -3,7 +3,6 @@ import { Card } from "../../../components/Card/Card";
 import { Slide } from "../../../components/Slide/Slide";
 import "swiper/css/free-mode";
 import { FreeMode } from "swiper/modules";
-
 import "./market.css";
 function Market() {
   const images = [
@@ -38,6 +37,7 @@ function Market() {
                         img="/bingX.png"
                         title="Đăng kí tài khoản BingX"
                         description="Mã giới thiệu: 19986"
+                        href="https://go.tradecoinvn.com/bingx"
                       />
                       <img
                         className="absolute aspect-square max-w-[16.4rem] -top-[50%] -translate-x-1/2 translate-y-1/2 left-[-5%]"
@@ -49,6 +49,8 @@ function Market() {
                         img="/hashkey.png"
                         title="Đăng kí tài khoản Hashkey"
                         description="Mã giới thiệu: 19986"
+                        href="https://go.tradecoinvn.com/hashkey"
+
                       />
                     </div>
                   </div>
@@ -59,6 +61,7 @@ function Market() {
                         img="/okx.png"
                         title="Đăng kí tài khoản OKX"
                         description="Mã giới thiệu: 19986"
+                        href="https://go.tradecoinvn.com/okx"
                       />
                     </div>
                     <div>
@@ -66,6 +69,8 @@ function Market() {
                         img="/mexc.png"
                         title="Đăng kí tài khoản MEXC"
                         description="Mã giới thiệu: 19986"
+                        href="https://go.tradecoinvn.com/mexc"
+
                       />
                     </div>
                   </div>
@@ -80,6 +85,8 @@ function Market() {
                       img="/byBit.png"
                       title="Đăng kí tài khoản ByBit"
                       description="Mã giới thiệu: 19986"
+                      href="https://go.tradecoinvn.com/bybit"
+
                     />
                   </div>
                   <div>
@@ -87,6 +94,8 @@ function Market() {
                       img="/binance.png"
                       title="Đăng kí tài khoản Binance"
                       description="Mã giới thiệu: 19986"
+                      href="https://go.tradecoinvn.com/binance"
+
                     />
                   </div>
                   <div>
@@ -94,6 +103,8 @@ function Market() {
                       img="/bitget.png"
                       title="Đăng kí tài khoản BitGet"
                       description="Mã giới thiệu: 19986"
+                      href="https://go.tradecoinvn.com/bitget"
+
                     />
                   </div>
                   <div>
@@ -119,6 +130,7 @@ function Market() {
                   spaceBetween={20}
                   freeMode={true}
                   modules={[FreeMode]}
+                  loop={true}
                   onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
                   className="slide-content"
                 >
