@@ -67,7 +67,7 @@
       font-weight: 700;
     }
     .slide-item {
-      padding: 1rem;
+      padding: 0 !important;
     }
   }
   

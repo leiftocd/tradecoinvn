@@ -10,7 +10,6 @@
     margin-bottom: 2.6rem;
     background: linear-gradient(180deg, #00e9ec99 0%, #00000099 100%);
   }
-  
   .card .title-card {
     font-size: 2rem;
     color: #f1f1f1;
@@ -31,19 +30,24 @@
   .card:hover p {
     color: #fff;
   }
-  
   @media (max-width: 600px) {
     .card {
-      max-width: unset;
       width: 100%;
       margin-bottom: 0;
-      transition: all 0.3s ease-in-out;
+      transition: all 0.5s ease-in-out;
+    }
+    .card img{
+      max-width: 80%;
     }
     .card .title-card {
-      font-size: 1.5rem;
+      font-size: 1.3rem;
     }
     .card.active {
       transform: scale(1.05);
+      border-color: unset;
+      box-shadow: unset;
+      background: linear-gradient(180deg, #00e9ec99 0%, #00000099 100%);
+      transition: all .5s ease-in-out;
     }
   }
   @media (max-width: 480px) {

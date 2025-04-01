@@ -42,10 +42,23 @@
         .col-right {
         display: none;
     }
+    #market .swiper-slide > div{
+        padding: .8rem;
+    }
     .market-slide {
         display: flex;
         flex-direction: column;
         width: 100%;
     }
   }
+
+  @media (max-width: 480px) {
+    #market .swiper-slide > div{
+        padding: .5rem;
+    }
+    .mket{
+        padding: .5rem ;
+    }
+}
+
   
