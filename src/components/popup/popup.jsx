@@ -9,7 +9,7 @@ function Popup() {
         <div className=' p-[4.8rem_6rem_6rem_6rem] max-sm:p-[3rem_3rem_3rem_3rem]
         rounded-[35px] border border-[#00E9EC] bg-[rgba(32,32,32,0.85)] backdrop-blur-[5.95px]'>
         <div className='flex flex-col gap-[1rem]'>
-            <div className='flex items-center justify-center'>
+            <div className='flex items-center justify-center max-sm:items-start max-sm:justify-start'>
                 <div className='flex pt-[5px]'>
                     <img src={Grow} alt="grow" className=' min-w-[3rem]  max-h-[30px]'/>
                 </div>
@@ -35,7 +35,7 @@ function Popup() {
                     </a>
                 </div>
         <div className='flex flex-col'>
-            <div className='flex items-center justify-center'>
+            <div className='flex items-center justify-center max-sm:items-start max-sm:justify-start'>
                 <div className='flex pt-[5px]'>
                     <img src={Grow} alt="grow" className=' min-w-[3rem]  max-h-[30px]'/>
                 </div>
