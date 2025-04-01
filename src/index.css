@@ -85,6 +85,7 @@ section{
   }
   .res-img{
     max-height: 8rem;
+    margin: 1rem auto;
   }
   /* h2{
     font-size: 2rem;
@@ -99,6 +100,7 @@ section{
       max-width: 58%;
   }
   .res-img{
+    margin-bottom: 2rem;
     max-height: 6.4rem;
   }
   .footer-res{
@@ -125,6 +127,12 @@ section{
   }
 }
 @media (max-width: 990px){
+  .res-img img{
+    max-width: 80%;
+  }
+  .res-img{
+    margin: 1rem auto;
+  }
   .textBtn,
   .textBtnLast{
       font-size: 1.1em !important;
@@ -148,6 +156,10 @@ section{
   }
 }
 @media (max-width: 768px){
+  .res-img img{
+    max-width: 70%;
+
+  }
   .textBtn,
   .textBtnLast{
       font-size: 1em;
@@ -207,8 +219,19 @@ section{
 
 }
 @media (max-width: 600px){
+  .res-img img{
+    max-width: 60%;
+
+  }
+  .res-img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1.5rem auto;
+  }
   .banner {
     padding: 2vw 3vw 2rem !important;
+    gap: 0;
   }
   .bene{
     padding: 0 2rem;
@@ -266,6 +289,15 @@ section{
   }
 }
 @media (max-width: 480px){
+  .mid{
+    justify-items: center;
+    align-items: center;
+  }
+  .bannerBtnLast,
+  .bannerBtn{
+    width: 100%;
+    max-width: 90% !important;
+  }
   .benefit-tit{
     font-size: 5vw;
   }
@@ -278,7 +310,7 @@ section{
     margin-bottom: -2px;
   }
   .res-w{
-    max-width: 100%;
+    max-width: 100% !important;
   }
   .swiper-button-prev-1,
   .swiper-button-next-1,

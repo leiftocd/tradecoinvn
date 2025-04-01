@@ -50,7 +50,7 @@ function Banner() {
                             >
                                 <img src={BannerContentBg} alt="" className='max-w-[100%]' loading='lazy'/>
                             </div>
-                            <div className=' flex flex-col w-full gap-[1rem] items-start pr-[5%] 
+                            <div className=' flex flex-col w-full gap-[1rem] items-start pr-[5%] mid
                             max-sm:gap-[1rem] max-sm:px-[0]'>
                                 <BannerBtn href="https://go.tradecoinvn.com/link-telegram-channel" 
                                     text="Channel Telegram TradeCoinVN"
