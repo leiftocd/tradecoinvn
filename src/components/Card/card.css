@@ -47,4 +47,9 @@
       transform: scale(1.05);
     }
   }
+  @media (max-width: 480px) {
+    .card{
+      padding: 1rem;
+    }
+  }
   

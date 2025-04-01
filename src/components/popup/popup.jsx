@@ -3,8 +3,10 @@ import '../popup/popup.css'
 import Grow from '../../../public/grow.png'
 function Popup() {
   return (
-    <div className='popup fixed z-100 top-[50%] left-[50%] -translate-y-1/2 -translate-x-1/2 w-full flex items-center justify-center max-w-[60%]'>
-        <div className=' p-[4.8rem_6rem_6rem_6rem]
+    <div className='popup fixed z-100 top-[50%] left-[50%] -translate-y-1/2 -translate-x-1/2 w-full flex items-center justify-center max-w-[60%]
+    max-sm:max-w-[85%] max-md:max-w-[80%] max-lg:max-w-[70%] 
+    '>
+        <div className=' p-[4.8rem_6rem_6rem_6rem] max-sm:p-[3rem_3rem_3rem_3rem]
         rounded-[35px] border border-[#00E9EC] bg-[rgba(32,32,32,0.85)] backdrop-blur-[5.95px]'>
         <div className='flex flex-col gap-[1rem]'>
             <div className='flex items-center justify-center'>

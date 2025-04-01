@@ -111,8 +111,7 @@ function Footer() {
         {isOpen && 
         <Popup />}
         <div className={`overlay ${isOpen ? 'active' : ''}`}
-        onClick={handleClose}>
-
+            onClick={handleClose}>
         </div>
     </section>
     

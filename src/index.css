@@ -186,7 +186,7 @@ section{
     padding: 0 4% !important;
   }
   .btn-footer{
-    padding: 0;
+    padding: 1rem;
   }
   .btn-footer button{
     padding: .5rem;
@@ -285,6 +285,7 @@ section{
   .swiper-button-prev-2,
   .swiper-button-next-2{
     transform: translateY(-25%) !important;
+    right: -1rem !important;
   }
   .slide-item > img{
     max-width: 7.5rem;
@@ -315,5 +316,8 @@ section{
   }
   #beneBox > div {
     margin: .5rem 0;
+  }
+  .left-img{
+    left: -8%;
   }
 }
