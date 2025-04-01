@@ -45,7 +45,7 @@ function Banner() {
                     <div className='flex w-full items-center justify-center gap-[0] 
                     max-sm:gap-[2rem] '>
                         <div className='w-full flex flex-col items-center justify-center gap-[1.5rem]  px-[1rem] 
-                        max-sm:gap-[1.5] '>
+                        max-sm:gap-[1rem] '>
                             <div className=' flex items-center justify-center ' 
                             >
                                 <img src={BannerContentBg} alt="" className='max-w-[100%]' loading='lazy'/>

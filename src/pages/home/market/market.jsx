@@ -1,11 +1,12 @@
 import { Card } from "../../../components/Card/Card";
 import { Slide } from "../../../components/Slide/Slide";
 import "swiper/css/free-mode";
-import { FreeMode } from "swiper/modules";
+import { FreeMode, Autoplay } from "swiper/modules";
 import "./market.css";
 function Market() {
 
   return (
+    
     <section>
 
         {/* MARKET SECTION: START */}
@@ -119,9 +120,24 @@ function Market() {
                   slidesPerView={3}
                   spaceBetween={20}
                   freeMode={true}
-                  modules={[FreeMode]}
+                  modules={[FreeMode, Autoplay]}
                   loop={true}
+                  auto={true}
+                  autoplay={{ delay: 3000, disableOnInteraction: false }}
                   className="slide-content"
+                  onSlideChange={(swiper) => {
+                    const slides = document.querySelectorAll('.swiper-slide');
+                    slides.forEach((slide, index) => {
+                      slide.style.transform = index === swiper.realIndex ? 'scale(1.1)' : 'scale(1)';
+                      slide.style.transition = 'transform 0.5s ease-in-out';
+                    });
+                  }}
+                  onInit={(swiper) => {
+                    // Use swiper to get the initial active slide
+                    const slides = document.querySelectorAll('.swiper-slide');
+                    slides[swiper.realIndex].style.transform = 'scale(1.1)'; // Scale the active slide
+                    slides[swiper.realIndex].style.transition = 'transform 0.5s ease-in-out';
+                  }}
                 >
                     
                     <Slide.Item >
