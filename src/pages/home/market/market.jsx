@@ -22,7 +22,9 @@ function Market() {
     <section id="market">
 
         {/* MARKET SECTION: START */}
-        <div className="w-full h-full mx-[auto] flex py-[3rem] justify-center max-w-[108rem] px-[3rem] market-res">
+        <div className="w-full h-full mx-[auto] flex py-[3rem] justify-center max-w-[108rem] px-[3rem] market-res
+        max-sm:px-[2rem]
+        ">
           <div className="warpper-content gap-[2rem] flex market-res">
             <div className="col-left">
               <div className="w-full relative">
