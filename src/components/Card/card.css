@@ -49,9 +49,7 @@
     .card.active {
       transform: scale(1.05);
       transition: all .3s ease-in-out;
-      background: linear-gradient(179.94deg, #00e9ec 0.05%, #000000 129.69%);
-      box-shadow: rgba(0, 233, 236, 0.475) 0px 0px 12px 0px;
-      border: #00e9ec 1px solid !important;
+      background: linear-gradient(180deg, #00e9ec99 0%, #00000099 100%);
     }
   }
   @media (max-width: 480px) {
