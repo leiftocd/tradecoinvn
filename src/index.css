@@ -287,6 +287,9 @@ section{
   .market-res{
     padding-bottom: 0;
   }
+  .p-market-res{
+    font-size: 1.4rem;
+  }
 }
 @media (max-width: 480px){
   .mid{

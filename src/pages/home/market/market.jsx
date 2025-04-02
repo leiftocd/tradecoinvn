@@ -129,7 +129,7 @@ function Market() {
                   src="/smoker.png"
                 />
                 <Slide.Root
-                  slidesPerView={3}
+                  slidesPerView={2.5}
                   spaceBetween={10}
                   freeMode={true}
                   modules={[FreeMode, Autoplay]}

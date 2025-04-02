@@ -20,7 +20,7 @@ const Card = forwardRef(
           <img decoding="async" src={img} />
         </p>
         {description && (
-          <p className="text-description">{description}</p>
+          <p className="text-description p-market-res ">{description}</p>
         )}
       </div>
     </a>
