@@ -16,12 +16,22 @@ function LoadingPage() {
       }, 1500);
       return; // Exit the useEffect
     }
-    // Redirect to the provided link, and replace current entry in history
-    const timeout = setTimeout(() => {
-      window.location.replace(link); // Use window.location.replace() to avoid history entry
-    }, 1500);
-
-    return () => clearTimeout(timeout); // Cleanup the timeout on component unmount
+    
+    // Decode the URL in case it's encoded
+    const decodedLink = decodeURIComponent(link);
+    
+    // If the link starts with 'http' or 'https', it's an external link
+    if (decodedLink.startsWith('http://') || decodedLink.startsWith('https://')) {
+      // Redirect to the provided link
+      setTimeout(() => {
+        window.location.replace(decodedLink); // Redirect to the external link
+      }, 1500);
+    } else {
+      // If no valid link, navigate to the home page
+      setTimeout(() => {
+        navigate('/', { replace: true });
+      }, 1500);
+    }
   }, [link, navigate]);
 
   return (
