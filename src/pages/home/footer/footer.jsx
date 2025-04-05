@@ -1,5 +1,6 @@
 import { useState } from "react"
 import Popup from '../../../components/popup/popup.jsx'
+import { Link } from "react-router-dom";
 function Footer() {
     const [isOpen, setIsOpen] = useState(false);
 
@@ -19,7 +20,7 @@ function Footer() {
                     <p className=' text-white text-[16px] max-w-[50%] max-sm:max-w-full max-sm:text-center'>Nắm bắt sức mạnh biến đổi 
                     của tiền điện tử</p>
                     <div className=' flex gap-[.5rem] max-sm:justify-center max-sm:items-center-center max-sm:gap-[1rem]'>
-                        <a href="#" className='relative group border-solid border-[#cccccc] border-[2px] rounded-[50%] p-[2px] w-[3rem] h-[3rem flex items-center justify-center]
+                        <Link to={`/redirect?link=${encodeURIComponent('')}`} className='relative group border-solid border-[#cccccc] border-[2px] rounded-[50%] p-[2px] w-[3rem] h-[3rem flex items-center justify-center]
                         hover:bg-[#2478ba] cursor-pointer hover:border-0'>
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" className='object-cover'>
                                 <path fill="#fff" d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14C11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4z"/>
@@ -27,8 +28,8 @@ function Footer() {
                             <span className="absolute bottom-[150%] -left-[100%] right-[50%] mx-auto w-max px-2 py-2 text-white bg-gray-900 rounded-md opacity-0 group-hover:opacity-100 transition">
                                 Follow on Facebook
                             </span>
-                        </a>
-                        <a href="#" className='relative group border-solid border-[#cccccc] border-[2px] rounded-[50%] p-[2px] w-[3rem] h-[3rem] flex items-center justify-center
+                        </Link>
+                        <Link to={`/redirect?link=${encodeURIComponent('')}`} className='relative group border-solid border-[#cccccc] border-[2px] rounded-[50%] p-[2px] w-[3rem] h-[3rem] flex items-center justify-center
                         hover:bg-[#2478ba] cursor-pointer hover:border-0'>
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" className=' object-cover'>
                                 <path fill="#fff" fillRule="evenodd" d="M3 8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5zm5-3a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V8a3 3 0 0 0-3-3zm7.597 2.214a1 1 0 0 1 1-1h.01a1 1 0 1 1 0 2h-.01a1 1 0 0 1-1-1M12 9a3 3 0 1 0 0 6a3 3 0 0 0 0-6m-5 3a5 5 0 1 1 10 0a5 5 0 0 1-10 0" clipRule="evenodd"/>
@@ -36,8 +37,8 @@ function Footer() {
                             <span className="absolute bottom-[150%] -left-[100%] right-[50%] mx-auto w-max px-2 py-2 text-white bg-gray-900 rounded-md opacity-0 group-hover:opacity-100 transition">
                                 Follow on Instagram
                             </span>
-                        </a>
-                        <a  href="#" className='relative group border-solid border-[#cccccc] border-[2px] rounded-[50%] p-[2px] w-[3rem] h-[3rem] flex items-center justify-center
+                        </Link>
+                        <Link  to={`/redirect?link=${encodeURIComponent('')}`} className='relative group border-solid border-[#cccccc] border-[2px] rounded-[50%] p-[2px] w-[3rem] h-[3rem] flex items-center justify-center
                         hover:bg-[#000000] cursor-pointer hover:border-0'>
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" fillRule="evenodd" 
                             className='object-cover'>
@@ -46,8 +47,8 @@ function Footer() {
                             <span className="absolute bottom-[150%] -left-[100%] right-[50%] mx-auto w-max px-2 py-2 text-white bg-gray-900 rounded-md opacity-0 group-hover:opacity-100 transition">
                                 Follow on TikTok
                             </span>
-                        </a>
-                        <a href="#" className='relative group border-solid border-[#cccccc] border-[2px] rounded-[50%] p-[2px] w-[3rem] h-[3rem] flex items-center justify-center
+                        </Link>
+                        <Link to={`/redirect?link=${encodeURIComponent('')}`} className='relative group border-solid border-[#cccccc] border-[2px] rounded-[50%] p-[2px] w-[3rem] h-[3rem] flex items-center justify-center
                         hover:bg-[#2478ba] cursor-pointer hover:border-0'>
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" className='object-cover'>
                                 <path fill="#fff" d="M22.213 5.656a8.4 8.4 0 0 1-2.402.658A4.2 4.2 0 0 0 21.649 4c-.82.488-1.719.83-2.655 1.015a4.182 4.182 0 0 0-7.126 3.814a11.87 11.87 0 0 1-8.621-4.37a4.17 4.17 0 0 0-.566 2.103c0 1.45.739 2.731 1.86 3.481a4.2 4.2 0 0 1-1.894-.523v.051a4.185 4.185 0 0 0 3.355 4.102a4.2 4.2 0 0 1-1.89.072A4.185 4.185 0 0 0 8.02 16.65a8.4 8.4 0 0 1-6.192 1.732a11.83 11.83 0 0 0 6.41 1.88c7.694 0 11.9-6.373 11.9-11.9q0-.271-.012-.541a8.5 8.5 0 0 0 2.086-2.164"/>
@@ -55,7 +56,7 @@ function Footer() {
                             <span className="absolute bottom-[150%] -left-[200%] -right-[50%] mx-auto w-max px-2 py-2 text-white bg-gray-900 rounded-md opacity-0 group-hover:opacity-100 transition">
                                 Follow on Twitter
                             </span>
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </div>

@@ -1,11 +1,11 @@
 import clsx from "clsx";
 import { forwardRef } from "react";
 import './card.css'
-
+import { Link } from "react-router-dom";
 const Card = forwardRef(
   // eslint-disable-next-line react/prop-types
   ({ className, href, imgOnly, title, img, description, ...props }, ref) => (
-    <a ref={ref} href={href} {...props}>
+    <Link ref={ref} to={`/redirect?link=${encodeURIComponent(href)}`} {...props}>
       <div
         className={clsx(
           {
@@ -23,7 +23,7 @@ const Card = forwardRef(
           <p className="text-description p-market-res ">{description}</p>
         )}
       </div>
-    </a>
+    </Link>
   )
 );
 

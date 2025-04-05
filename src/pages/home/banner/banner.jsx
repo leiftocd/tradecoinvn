@@ -52,7 +52,7 @@ function Banner() {
                             </div>
                             <div className=' flex flex-col w-full gap-[1rem] items-start pr-[5%] mid
                             max-sm:gap-[1rem] max-sm:px-[0]'>
-                                <BannerBtn href="https://go.tradecoinvn.com/link-telegram-channel" 
+                                <BannerBtn href={'https://t.me/margintradingTCVN'} 
                                     text="Channel Telegram TradeCoinVN"
                                     className=" bannerBtn flex items-center justify-center max-w-[26.5rem] 
                                     
@@ -61,14 +61,14 @@ function Banner() {
                                     max-sm:text-[1.2em]"
                                 />
                         
-                                <BannerBtn href="https://www.facebook.com/groups/tradervietnam" text="Group Facebook TradeCoinVN" 
+                                <BannerBtn href={'https://www.facebook.com/groups/tradervietnam'}   text="Group Facebook TradeCoinVN" 
                                     className=" bannerBtn flex items-center justify-center max-w-[26.5rem] 
                                     "
                                     spanBtn="textBtn  
                                     max-sm:text-[1.2em] "
                                 />
                         
-                                <BannerBtn href="https://go.tradecoinvn.com/link-telegram-support" text="Liên Hệ Support TradeCoinVN" 
+                                <BannerBtn href={'https://go.tradecoinvn.com/link-telegram-support'}  text="Liên Hệ Support TradeCoinVN" 
                                     className=" bannerBtnLast  py-[1rem] flex items-center justify-center max-w-[26.5rem] 
                                     " 
                                     spanBtn=" textBtnLast max-sm:text-[1.2em]"
