@@ -1,4 +1,5 @@
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+import { FreeMode, Autoplay } from "swiper/modules";
 import useIsomorphicLayoutEffect from "use-isomorphic-layout-effect";
 import { Slide } from "../../../components/Slide/Slide";
 import './partner.css'
@@ -9,6 +10,8 @@ const Partner = () => {
   const [slidesConfig, setSlidesConfig] = useState({
     slidesPerView: 4.3,
     spaceBetween: 0,
+    
+    
   });
   useIsomorphicLayoutEffect(() => {
     const updateSlidesConfig = () => {
@@ -44,6 +47,9 @@ const Partner = () => {
               <Slide.Root
                 {...slidesConfig}
                 grabCursor={true}
+                modules={[FreeMode, Autoplay]}
+                loop={true}
+                autoplay={{ delay: 3000, disableOnInteraction: false }}
                 navigation={{
                   nextEl: ".swiper-button-next-1",
                   prevEl: ".swiper-button-prev-1",
@@ -144,6 +150,9 @@ const Partner = () => {
               <Slide.Root
                 {...slidesConfig}
                 grabCursor={true}
+                modules={[FreeMode, Autoplay]}
+                loop={true}
+                autoplay={{ delay: 3000, disableOnInteraction: false }}
                 navigation={{
                   nextEl: ".swiper-button-next-2",
                   prevEl: ".swiper-button-prev-2",
