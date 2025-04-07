@@ -1,38 +1,32 @@
 import Logo from '../../../public/bannerlogo.png';
 import './loadingPage.css';
 import { useEffect } from "react";
-import { useSearchParams, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 function LoadingPage() {
-  const [searchParams] = useSearchParams();
-  const link = searchParams.get("link");
-  const navigate = useNavigate(); // Initialize navigate to redirect if no link
+  const { slug } = useParams(); // Lấy slug từ URL
 
   useEffect(() => {
-    if (!link) {
-      // If no link is provided, redirect to the home page
-      setTimeout(() => {
-        navigate('/', { replace: true }); // Navigate to the home page, replacing current entry in history
-      }, 1500);
-      return; // Exit the useEffect
-    }
-    
-    // Decode the URL in case it's encoded
-    const decodedLink = decodeURIComponent(link);
-    
-    // If the link starts with 'http' or 'https', it's an external link
-    if (decodedLink.startsWith('http://') || decodedLink.startsWith('https://')) {
-      // Redirect to the provided link
-      setTimeout(() => {
-        window.location.replace(decodedLink); // Redirect to the external link
-      }, 1500);
-    } else {
-      // If no valid link, navigate to the home page
-      setTimeout(() => {
-        navigate('/', { replace: true });
-      }, 1500);
-    }
-  }, [link, navigate]);
+    const externalLinks = {
+      "link-telegram-channel": "https://t.me/margintradingTCVN",
+      "link-telegram-support": "https://t.me/TCVN_Support",
+      "BingX": "https://bingx.com/en/accounts/invite/VR26GG",
+      "Hashkey": "https://global.hashkey.com/en-US/register/invite?invite_code=qCpvZR",
+      "OKX": "https://www.okx.com/vi/join/81726041",
+      "MEXC": "https://www.mexc.com/vi-VN/register?inviteCode=mexc-121eFA",
+      "ByBit": "https://www.bybitglobal.com/en/sign-up?affiliate_id=19986",
+      "Binance": "https://accounts.binance.com/vi/register?ref=DCAGBWQ6",
+      "BitGet": "https://www.bitget.com/vi/expressly?channelCode=TradeCoinVietnam&vipCode=gcr2&languageType=4",
+      // mapping slug -> URL tại đây
+    };
+    const externalUrl = externalLinks[slug] || "https://default-fallback.com"; // URL mặc định nếu slug không khớp
+    // Redirect sau 1.5 giây
+    const timer = setTimeout(() => {
+      window.location.replace(externalUrl); // Redirect đến external URL
+    }, 1500);
+
+    return () => clearTimeout(timer); // Cleanup
+  }, [slug]);
 
   return (
     <section className='h-screen flex w-full justify-center py-[4rem_0]'>
