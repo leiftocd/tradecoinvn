@@ -256,7 +256,7 @@ section{
   }
   .beneT-res,
   .beneB-res{
-    gap: 2rem;
+    gap: 1rem;
     flex-direction: column;
   }
   .arrow{

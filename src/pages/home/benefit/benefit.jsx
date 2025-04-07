@@ -19,7 +19,7 @@ function Benefit() {
                     <img src={Grow} alt="grow" className="min-w-[30px] max-h-[30px]"/>
                 </div>
             </div>
-            <div className=" flex flex-col gap-[2rem]">
+            <div className=" flex flex-col gap-[2rem] max-sm:gap-[1rem]">
                 <BenefitContainerT />
                 <BenefitContainerB />
             </div>
