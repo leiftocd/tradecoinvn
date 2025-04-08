@@ -19,14 +19,13 @@ function LoadingPage() {
       "ByBit": "https://www.bybitglobal.com/en/sign-up?affiliate_id=19986",
       "Binance": "https://accounts.binance.com/vi/register?ref=DCAGBWQ6",
       "BitGet": "https://www.bitget.com/vi/expressly?channelCode=TradeCoinVietnam&vipCode=gcr2&languageType=4",
-      // Add more mappings as needed
+      // mapping url config
     };
-
-    const externalUrl = externalLinks[slug] || "https://default-fallback.com"; // Fallback URL if slug doesn't match
+    const externalUrl = externalLinks[slug] || "https://default-fallback.com";
     const timer = setTimeout(() => {
       window.location.replace(externalUrl); // Redirect to the URL
     }, 1500);
-    return () => clearTimeout(timer); // Cleanup the timeout
+    return () => clearTimeout(timer); 
   }, [slug]);
 
   return (
@@ -42,13 +41,13 @@ function LoadingPage() {
           : slug === 'link-telegram-channel' 
           ? 'Link Telegram Channel | TradeCoinVN' 
           : `Tham gia sàn giao dịch ${slug} cùng TradeCoinVN để được hưởng nhiều quyền lợi và cơ hội trong việc đầu tư của bạn`}
-        image={`${process.env.PUBLIC_URL}/logo.png`}  // Use PUBLIC_URL for consistency
+        image="/logotitle.png" 
         url={window.location.href}
 
         // Open Graph meta tags
         ogTitle={slug === 'link-telegram-support' ? 'Link Telegram | TradeCoinVN' : `Tham gia sàn giao dịch ${slug} cùng TradeCoinVN`}
         ogDescription={slug === 'link-telegram-support' ? 'Link Telegram | TradeCoinVN' : `Tham gia sàn giao dịch ${slug} cùng TradeCoinVN`}
-        ogImage={`${process.env.PUBLIC_URL}/logo.png`}
+        ogImage="/logotitle.png"
         ogUrl={window.location.href}
         ogType="website"
 
@@ -56,7 +55,7 @@ function LoadingPage() {
         twitterCard="summary_large_image"
         twitterTitle={slug === 'link-telegram-support' ? 'Link Telegram | TradeCoinVN' : `Tham gia sàn giao dịch ${slug} cùng TradeCoinVN`}
         twitterDescription={slug === 'link-telegram-support' ? 'Link Telegram | TradeCoinVN' : `Tham gia sàn giao dịch ${slug} cùng TradeCoinVN`}
-        twitterImage={`${process.env.PUBLIC_URL}/logo.png`}
+        twitterImage="/logotitle.png"
         twitterUrl={window.location.href}
       />
       <section className='h-screen flex w-full justify-center py-[4rem_0]'>
