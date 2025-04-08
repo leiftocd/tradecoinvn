@@ -6,6 +6,7 @@ import Footer from './footer/footer.jsx';
 import SEO from '../../components/Seo/Seo.jsx';
 
 function Home() {
+
   return (
     <>
       <SEO 
