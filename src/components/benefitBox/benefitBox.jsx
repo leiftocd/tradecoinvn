@@ -2,21 +2,23 @@
 import Arrow from '../../../public/arrow.png';
 import { useState } from 'react';
 
-function BenefitBox({ spanText, srcImg, titleText }) {
+function BenefitBox({ spanText, srcImg, titleText, id, activeBox, onBoxClick }) {
     const [isHovered, setIsHovered] = useState(false);
-    const [isClicked, setIsClicked] = useState(false);
+    const isMobile = typeof window !== 'undefined' && window.matchMedia('(max-width: 1024px)').matches;
     const handleClick = () => {
-        setIsClicked((prev) => !prev);
+        if (isMobile) {
+            onBoxClick(id); 
+        }
     };
-    const isMobile = typeof window !== 'undefined' && window.matchMedia('(max-width: 768px)').matches;
+    const isActive = activeBox === id;
     return (
         <>
             <div
                 id="beneBox"
                 className="flex flex-col gap-[2rem] max-w-[100%] w-full hv"
-                onMouseEnter={!isMobile ? () => setIsHovered(true) : null} 
-                onMouseLeave={() => setIsHovered(false)}
-                onClick={isMobile ? handleClick : null}
+                onMouseEnter={!isMobile ? () => setIsHovered(true) : null}
+                onMouseLeave={!isMobile ? () => setIsHovered(false) : null}
+                onClick={isMobile ? handleClick : null} 
             >
                 <div
                     style={{ height: '-webkit-fill-available' }}
@@ -36,7 +38,7 @@ function BenefitBox({ spanText, srcImg, titleText }) {
                                 src={Arrow}
                                 alt=""
                                 className={`transition-all duration-500 ${
-                                    isHovered || isClicked ? '-rotate-180 opacity-[1]' : 'rotate-0 opacity-[.6]'
+                                    isHovered || isActive ? '-rotate-180 opacity-[1]' : 'rotate-0 opacity-[.6]'
                                 }`}
                             />
                         </div>
@@ -45,21 +47,21 @@ function BenefitBox({ spanText, srcImg, titleText }) {
                                 src={srcImg}
                                 alt="Benefit"
                                 className={`w-full object-cover transition-all duration-300 ${
-                                    isHovered || isClicked ? 'flex' : 'hidden'
+                                    isHovered || isActive ? 'flex' : 'hidden'
                                 }`}
                             />
                         </div>
                     </div>
                     <div
                         className={`arrow absolute transition-all duration-1000 ${
-                            isHovered || isClicked ? 'left-[85%] bottom-[90%]' : 'left-[40%] bottom-[0]'
+                            isHovered || isActive ? 'left-[85%] bottom-[90%]' : 'left-[40%] bottom-[0]'
                         }`}
                     >
                         <img
                             src={Arrow}
                             alt=""
                             className={`transition-all duration-300 ${
-                                isHovered || isClicked ? 'rotate-180' : 'rotate-0'
+                                isHovered || isActive ? 'rotate-180' : 'rotate-0'
                             }`}
                         />
                     </div>
