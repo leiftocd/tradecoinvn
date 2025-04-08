@@ -5,16 +5,6 @@ function SEO({ title, description, name, type, url, image, twitterCard, ogTitle,
     const pageDescription = description || "Default description for the page.";
     const pageUrl = url || window.location.href;
     const pageImage = image || `${window.location.origin}/logotitle.png`;
-    console.log('SEO Metadata:', {
-        title,
-        description,
-        url,
-        image,
-        ogTitle,
-        ogDescription,
-        ogImage,
-        ogUrl
-      });
     return (
       <Helmet>
         <meta charset="UTF-8" />
