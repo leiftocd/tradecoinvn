@@ -8,6 +8,7 @@ function SEO({ title, description, name, type, url, image, twitterCard, ogTitle,
   
     return (
       <Helmet>
+        <meta charset="UTF-8" />
         {/* Standard metadata tags */}
         <title>{pageTitle}</title>
         <meta name="description" content={pageDescription} />

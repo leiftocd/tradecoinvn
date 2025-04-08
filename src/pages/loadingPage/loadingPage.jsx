@@ -19,7 +19,7 @@ function LoadingPage() {
       "ByBit": "https://www.bybitglobal.com/en/sign-up?affiliate_id=19986",
       "Binance": "https://accounts.binance.com/vi/register?ref=DCAGBWQ6",
       "BitGet": "https://www.bitget.com/vi/expressly?channelCode=TradeCoinVietnam&vipCode=gcr2&languageType=4",
-      // mapping url config
+      // mapping slug -> url
     };
     const externalUrl = externalLinks[slug] || "https://default-fallback.com";
     const timer = setTimeout(() => {
