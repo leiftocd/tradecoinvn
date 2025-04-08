@@ -7,7 +7,7 @@ function BenefitContainerT() {
   return (
     <>
         <div className="flex gap-[1rem] flex-[1] beneT-res">
-            <BenefitBox 
+            <BenefitBox z
               spanText='04'
               srcImg={ImgFour}
               titleText='Cập nhật tin tức thị trường crypto tốc độ tên lửa'

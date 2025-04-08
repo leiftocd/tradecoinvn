@@ -6,7 +6,7 @@ function BenefitBox({spanText, srcImg, titleText }) {
   return (
     <>
         <div id='beneBox' className=" flex flex-col gap-[2rem] max-w-[100%] w-full hv "
-             onMouseEnter={() => setIsHovered(true)}
+             onMouseEnter={() => setIsHovered(prev => !prev)}
              onMouseLeave={() => setIsHovered(false)}
         >
             <div style={ {height: '-webkit-fill-available'}} className="flex rounded-[30px] bg-gradient-to-r from-[rgba(17,93,242,0.16)] to-[rgba(0,233,236,0.16)] bene-box relative">
