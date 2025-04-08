@@ -68,7 +68,7 @@ function LoadingPage() {
             />
             <meta property="og:type" content="website" />
             <meta property="og:image" content={ThumpImg} />
-            <meta property="og:url" content={ThumpImg}/>
+            <meta property="og:url" content="https://yourdomain.com/"/>
             {/* Twitter Card Meta Tags */}
             <meta name="twitter:card" content="summary_large_image" />
             <meta
