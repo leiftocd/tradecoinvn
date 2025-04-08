@@ -24,7 +24,7 @@ function Home() {
           content="Tham gia TRADECOINVN - Cộng đồng Crypto hàng đầu Việt Nam để nhận nhiều lợi ích và cơ hội đầu tư."
         />
         <meta property="og:image" content={LogoTitle} />
-        <meta property="og:url" content="https://yourdomain.com/" />
+        <meta property="og:url" content="https://default-fallback.com" />
         {/* Twitter Card metadata */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Trang chủ - TRADECOINVN" />
