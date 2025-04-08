@@ -12,7 +12,7 @@ function Home() {
       <SEO 
         title="Trang chủ - TRADECOINVN"
         description="Tham gia TRADECOINVN - Cộng đồng Crypto hàng đầu Việt Nam để nhận nhiều lợi ích và cơ hội đầu tư."
-        image={`${window.location.origin}/logotitle.png`}
+        image="https://images.unsplash.com/photo-1726137569966-a7354383e2ae?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         url={window.location.href}
         //op graph
         ogTitle="Trang chủ - TRADECOINVN"

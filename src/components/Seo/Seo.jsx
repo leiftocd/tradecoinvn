@@ -10,6 +10,10 @@ function SEO({ title, description, name, type, url, image, twitterCard, ogTitle,
         description,
         url,
         image,
+        ogTitle,
+        ogDescription,
+        ogImage,
+        ogUrl
       });
     return (
       <Helmet>
