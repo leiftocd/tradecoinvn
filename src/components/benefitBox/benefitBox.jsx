@@ -47,7 +47,7 @@ function BenefitBox({ spanText, srcImg, titleText, id, activeBox, onBoxClick }) 
                                 src={srcImg}
                                 alt="Benefit"
                                 className={`w-full object-cover transition-all duration-300 ${
-                                    isHovered || isActive ? 'flex' : 'hidden'
+                                    isHovered || isActive ? 'block' : 'hidden'
                                 }`}
                             />
                         </div>
