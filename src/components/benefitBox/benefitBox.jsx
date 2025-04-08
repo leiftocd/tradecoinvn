@@ -15,7 +15,7 @@ function BenefitBox({ spanText, srcImg, titleText }) {
                 id="beneBox"
                 className="flex flex-col gap-[2rem] max-w-[100%] w-full hv"
                 onMouseEnter={!isMobile ? () => setIsHovered(true) : null} 
-                onMouseLeave={!isMobile ? () => setIsHovered(false) : null}
+                onMouseLeave={() => setIsHovered(false)}
                 onClick={isMobile ? handleClick : null}
             >
                 <div
