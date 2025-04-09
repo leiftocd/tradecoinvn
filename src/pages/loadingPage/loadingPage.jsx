@@ -4,10 +4,9 @@ import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import SEO from '../../components/Seo/Seo.jsx';
 
-function LoadingPage(fullUrl) {
+function LoadingPage() {
   const { slug } = useParams(); // Get the slug from the URL
   useEffect(() => {
-    
     // Define external URLs based on slug
     const externalLinks = {
       "link-telegram-channel": "https://t.me/margintradingTCVN",
@@ -46,21 +45,23 @@ function LoadingPage(fullUrl) {
 
   return (
     <>
-      <SEO
+      <SEO 
         title={title}
         description={description}
         image="/logotitle.png"
-        url={fullUrl}
+        url={window.location.href}
+        //op graph
         ogTitle={title}
         ogDescription={description}
         ogImage="/logotitle.png"
-        ogUrl={fullUrl}
+        ogUrl={window.location.href}
         ogType="website"
+        // Twitter meta tags
         twitterCard="summary_large_image"
         twitterTitle={title}
         twitterDescription={description}
         twitterImage="/logotitle.png"
-        twitterUrl={fullUrl}
+        twitterUrl={window.location.href}
       />
       <section className='h-screen flex w-full justify-center py-[4rem_0]'>
         <div className="redirectPage max-w-[1080px] flex flex-col gap-[12rem] w-full">
