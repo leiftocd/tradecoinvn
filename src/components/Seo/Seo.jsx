@@ -4,7 +4,8 @@ import { Helmet } from 'react-helmet-async';
 function SEO({ title, description, name, type, url, image, twitterCard, ogTitle, ogDescription, ogImage, ogUrl }) {
   const pageTitle = title || "Default Title";
   const pageDescription = description || "Default description for the page.";
-  const pageUrl = url || window.location.href;
+  const isClient = typeof window !== 'undefined';
+  const pageUrl = url || (isClient ? window.location.href : '');
   const pageImage = image || `${window.location.origin}/logotitle.png`;
 
   return (

@@ -7,6 +7,7 @@ import SEO from '../../components/Seo/Seo.jsx';
 function LoadingPage() {
   const { slug } = useParams(); // Get the slug from the URL
   useEffect(() => {
+    
     // Define external URLs based on slug
     const externalLinks = {
       "link-telegram-channel": "https://t.me/margintradingTCVN",

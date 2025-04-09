@@ -1,28 +1,36 @@
-/* eslint-disable no-undef */
-require('@babel/register')({
-    presets: ['@babel/preset-env', '@babel/preset-react'],
-    ignore: [/node_modules/]
-  });
-  
-  require('ignore-styles'); // Bỏ qua CSS khi SSR
-  
-  const express = require('express');
-  const React = require('react');
-  const ReactDOMServer = require('react-dom/server');
-  
-  const App = require('./src/App').default;
-  
-  const app = express();
-  const PORT = 3000;
-  
-  app.use(express.static('public')); // để phục vụ JS client
-  
-  app.get('*', (req, res) => {
-    const content = ReactDOMServer.renderToString(React.createElement(App));
-  
-    res.send('<!DOCTYPE html>' + content);
-  });
-  
-  app.listen(PORT, () => {
-    console.log(`SSR server đang chạy tại http://localhost:${PORT}`);
-  });
+import express from 'express';
+import { renderToString } from 'react-dom/server';
+import { StaticRouter } from 'react-router-dom/server';
+import { HelmetProvider } from 'react-helmet-async';
+import fs from 'fs';
+import path from 'path';
+import App from '../src/App.jsx';
+
+const app = express();
+const PORT = 3000;
+const template = fs.readFileSync(path.resolve('dist/client/index.html'), 'utf-8');
+
+app.use(express.static(path.resolve('dist/client')));
+
+app.get('*', async (req, res) => {
+  const helmetContext = {};
+  const appHtml = renderToString(
+    <HelmetProvider context={helmetContext}>
+      <StaticRouter location={req.url}>
+        <App />
+      </StaticRouter>
+    </HelmetProvider>
+  );
+  const { helmet } = helmetContext;
+
+  const html = template
+    .replace('<!--app-html-->', appHtml)
+    .replace('<!--helmet-title-->', helmet.title.toString())
+    .replace('<!--helmet-meta-->', helmet.meta.toString());
+
+  res.status(200).set({ 'Content-Type': 'text/html' }).end(html);
+});
+
+app.listen(PORT, () => {
+  console.log(`SSR server running at http://localhost:${PORT}`);
+});
