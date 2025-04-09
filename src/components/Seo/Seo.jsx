@@ -4,7 +4,7 @@ function SEO({ title, description, url, image, ogTitle, ogDescription, ogImage, 
   const pageTitle = title || "Default Title";
   const pageDescription = description || "Default description for the page.";
   const pageUrl = url || window.location.href;
-  const pageImage = image || `${window.location.origin}/logotitle.png`;
+  const pageImage = image || "/logotitle.png";
 
   return (
     <Helmet>
