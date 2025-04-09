@@ -23,10 +23,15 @@ app.get('*', async (req, res) => {
   );
   const { helmet } = helmetContext;
 
-  const html = template
-    .replace('<!--app-html-->', appHtml)
-    .replace('<!--helmet-title-->', helmet.title.toString())
-    .replace('<!--helmet-meta-->', helmet.meta.toString());
+  const helmetHead = `
+  ${helmet.title.toString()}
+  ${helmet.meta.toString()}
+  ${helmet.link.toString()}
+`;
+
+const html = template
+  .replace('%helmet-head%', helmetHead)
+  .replace('<!--app-html-->', appHtml);
 
   res.status(200).set({ 'Content-Type': 'text/html' }).end(html);
 });
