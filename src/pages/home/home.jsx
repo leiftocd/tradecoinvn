@@ -10,19 +10,19 @@ function Home() {
       <SEO 
         title="Trang chủ - TRADECOINVN"
         description="Tham gia TRADECOINVN - Cộng đồng Crypto hàng đầu Việt Nam để nhận nhiều lợi ích và cơ hội đầu tư."
-        image="{`${window.location.origin}/logotitle.png`}"
+        image="/logotitle.png"
         url={window.location.href}
         //op graph
         ogTitle="Trang chủ - TRADECOINVN"
         ogDescription="Tham gia TRADECOINVN - Cộng đồng Crypto hàng đầu Việt Nam để nhận nhiều lợi ích và cơ hội đầu tư."
-        ogImage="{`${window.location.origin}/logotitle.png`}"
+        ogImage="/logotitle.png"
         ogUrl={window.location.href}
         ogType="website"
         // Twitter meta tags
         twitterCard="summary_large_image"
         twitterTitle="Trang chủ - TRADECOINVN"
         twitterDescription="Tham gia TRADECOINVN - Cộng đồng Crypto hàng đầu Việt Nam để nhận nhiều lợi ích và cơ hội đầu tư."
-        twitterImage={`${window.location.origin}/logotitle.png`}
+        twitterImage="/logotitle.png"
         twitterUrl={window.location.href}
       />
       <Banner />
