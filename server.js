@@ -24,6 +24,10 @@ app.get('*', async (req, res) => {
       </HelmetProvider>
     );
   
+    const cssFile = fs.readdirSync(path.resolve('dist/client/assets'))
+  .find(file => file.endsWith('.css'));
+
+const cssLink = `<link rel="stylesheet" href="/assets/${cssFile}">`;
     const { helmet } = helmetContext;
   
     const helmetHead = `
@@ -33,8 +37,8 @@ app.get('*', async (req, res) => {
     `;
   
     const html = template
-      .replace('%helmet-head%', helmetHead)
-      .replace('<!--app-html-->', appHtml);
+    .replace('%helmet-head%', `${cssLink}\n${helmetHead}`)
+    .replace('<!--app-html-->', appHtml);
   
     res.status(200).set({ 'Content-Type': 'text/html' }).end(html);
   });
