@@ -13,28 +13,31 @@ const template = fs.readFileSync(path.resolve('dist/client/index.html'), 'utf-8'
 app.use(express.static(path.resolve('dist/client')));
 
 app.get('*', async (req, res) => {
-  const helmetContext = {};
-  const appHtml = renderToString(
-    <HelmetProvider context={helmetContext}>
-      <StaticRouter location={req.url}>
-        <App />
-      </StaticRouter>
-    </HelmetProvider>
-  );
-  const { helmet } = helmetContext;
-
-  const helmetHead = `
-  ${helmet.title.toString()}
-  ${helmet.meta.toString()}
-  ${helmet.link.toString()}
-`;
-
-const html = template
-  .replace('%helmet-head%', helmetHead)
-  .replace('<!--app-html-->', appHtml);
-
-  res.status(200).set({ 'Content-Type': 'text/html' }).end(html);
-});
+    const helmetContext = {};
+    const fullUrl = `${req.protocol}://${req.get('host')}${req.originalUrl}`;
+  
+    const appHtml = renderToString(
+      <HelmetProvider context={helmetContext}>
+        <StaticRouter location={req.url}>
+          <App url={fullUrl} />
+        </StaticRouter>
+      </HelmetProvider>
+    );
+  
+    const { helmet } = helmetContext;
+  
+    const helmetHead = `
+      ${helmet.title.toString()}
+      ${helmet.meta.toString()}
+      ${helmet.link.toString()}
+    `;
+  
+    const html = template
+      .replace('%helmet-head%', helmetHead)
+      .replace('<!--app-html-->', appHtml);
+  
+    res.status(200).set({ 'Content-Type': 'text/html' }).end(html);
+  });
 
 app.listen(PORT, () => {
   console.log(`SSR server running at http://localhost:${PORT}`);

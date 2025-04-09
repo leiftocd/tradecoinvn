@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import SEO from '../../components/Seo/Seo.jsx';
 
-function LoadingPage() {
+function LoadingPage(fullUrl) {
   const { slug } = useParams(); // Get the slug from the URL
   useEffect(() => {
     
@@ -22,40 +22,45 @@ function LoadingPage() {
       // mapping slug -> url
     };
     const externalUrl = externalLinks[slug] || "https://default-fallback.com";
+
     const timer = setTimeout(() => {
-      window.location.replace(externalUrl); // Redirect to the URL
+      window.location.replace(externalUrl);
     }, 1500);
-    return () => clearTimeout(timer); 
+
+    return () => clearTimeout(timer);
   }, [slug]);
+
+  const title =
+    slug === 'link-telegram-support'
+      ? 'Link Telegram | TradeCoinVN'
+      : slug === 'link-telegram-channel'
+      ? 'Link Telegram Channel | TradeCoinVN'
+      : `Tham gia sàn giao dịch ${slug} cùng TradeCoinVN`;
+
+  const description =
+    slug === 'link-telegram-support'
+      ? 'Link Telegram | TradeCoinVN'
+      : slug === 'link-telegram-channel'
+      ? 'Link Telegram Channel | TradeCoinVN'
+      : `Tham gia sàn giao dịch ${slug} cùng TradeCoinVN để được hưởng nhiều quyền lợi và cơ hội trong việc đầu tư của bạn`;
 
   return (
     <>
-      <SEO 
-        title={slug === 'link-telegram-support' 
-          ? 'Link Telegram | TradeCoinVN' 
-          : slug === 'link-telegram-channel' 
-          ? 'Link Telegram Channel | TradeCoinVN' 
-          : `Tham gia sàn giao dịch ${slug} cùng TradeCoinVN`}
-        description={slug === 'link-telegram-support' 
-          ? 'Link Telegram | TradeCoinVN' 
-          : slug === 'link-telegram-channel' 
-          ? 'Link Telegram Channel | TradeCoinVN' 
-          : `Tham gia sàn giao dịch ${slug} cùng TradeCoinVN để được hưởng nhiều quyền lợi và cơ hội trong việc đầu tư của bạn`}
-        image="/logotitle.png" 
-        url={window.location.href}
-        // Open Graph meta tags
-        ogTitle={slug === 'link-telegram-support' ? 'Link Telegram | TradeCoinVN' : `Tham gia sàn giao dịch ${slug} cùng TradeCoinVN`}
-        ogDescription={slug === 'link-telegram-support' ? 'Link Telegram | TradeCoinVN' : `Tham gia sàn giao dịch ${slug} cùng TradeCoinVN`}
+      <SEO
+        title={title}
+        description={description}
+        image="/logotitle.png"
+        url={fullUrl}
+        ogTitle={title}
+        ogDescription={description}
         ogImage="/logotitle.png"
-        ogUrl={window.location.href}
+        ogUrl={fullUrl}
         ogType="website"
-
-        // Twitter meta tags
         twitterCard="summary_large_image"
-        twitterTitle={slug === 'link-telegram-support' ? 'Link Telegram | TradeCoinVN' : `Tham gia sàn giao dịch ${slug} cùng TradeCoinVN`}
-        twitterDescription={slug === 'link-telegram-support' ? 'Link Telegram | TradeCoinVN' : `Tham gia sàn giao dịch ${slug} cùng TradeCoinVN`}
+        twitterTitle={title}
+        twitterDescription={description}
         twitterImage="/logotitle.png"
-        twitterUrl={window.location.href}
+        twitterUrl={fullUrl}
       />
       <section className='h-screen flex w-full justify-center py-[4rem_0]'>
         <div className="redirectPage max-w-[1080px] flex flex-col gap-[12rem] w-full">
