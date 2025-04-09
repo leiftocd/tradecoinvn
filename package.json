@@ -2,7 +2,7 @@
   "name": "tradecoinvn",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
+  "type": "commonjs",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -10,8 +10,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@babel/core": "^7.26.10",
+    "@babel/preset-env": "^7.26.9",
+    "@babel/preset-react": "^7.26.3",
     "@tailwindcss/vite": "^4.0.17",
+    "babel-register": "^6.26.0",
     "express": "^5.1.0",
+    "ignore-styles": "^5.0.1",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
