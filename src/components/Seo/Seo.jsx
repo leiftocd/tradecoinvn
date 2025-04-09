@@ -10,21 +10,21 @@ function SEO({ title, description, url, ogTitle, ogDescription, ogImage, ogUrl }
       {/* Character encoding meta tag */}
       <meta charSet="UTF-8" />
       {/* Standard metadata tags */}
-      <title>{pageTitle}</title>
+      <title data-react-helmet="true">{pageTitle}</title>
       <meta name="description" content={pageDescription} data-react-helmet="true"/>
       <meta name="image" content="{`${window.location.origin}/logotitle.png`}" data-react-helmet="true"/>
       {/* Open Graph tags */}
-      <meta property="og:type" content="website" />
-      <meta property="og:title" content={ogTitle || pageTitle} />
-      <meta property="og:description" content={ogDescription || pageDescription} />
-      <meta property="og:url" content={ogUrl || pageUrl} />
-      <meta property="og:image" content={ogImage || `${window.location.origin}/logotitle.png`} />
-      <meta property="og:image:secure_url" content={ogImage || `${window.location.origin}/logotitle.png`} />
+      <meta property="og:type" content="website" data-react-helmet="true"/>
+      <meta property="og:title" content={ogTitle || pageTitle} data-react-helmet="true"/>
+      <meta property="og:description" content={ogDescription || pageDescription} data-react-helmet="true"/>
+      <meta property="og:url" content={ogUrl || pageUrl} data-react-helmet="true"/>
+      <meta property="og:image" content={ogImage || `${window.location.origin}/logotitle.png`} data-react-helmet="true"/>
+      <meta property="og:image:secure_url" content={ogImage || `${window.location.origin}/logotitle.png`} data-react-helmet="true"/>
       {/* Open tw tags */}
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content={ogTitle || pageTitle} />
-      <meta name="twitter:description" content={ogDescription || pageDescription} />
-      <meta name="twitter:image" content={ogImage || `${window.location.origin}/logotitle.png`} />
+      <meta name="twitter:card" content="summary_large_image" data-react-helmet="true"/>
+      <meta name="twitter:title" content={ogTitle || pageTitle} data-react-helmet="true"/>
+      <meta name="twitter:description" content={ogDescription || pageDescription} data-react-helmet="true"/>
+      <meta name="twitter:image" content={ogImage || `${window.location.origin}/logotitle.png`} data-react-helmet="true"/>
     </Helmet>
   );
 }
