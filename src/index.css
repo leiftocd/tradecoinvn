@@ -57,6 +57,9 @@ section{
   opacity: 1;
   visibility: visible;
 }
+.webkit-fill-av{
+  height: -webkit-fill-available;
+}
 .overlay {
   position: fixed;
   top: 0;
@@ -159,6 +162,9 @@ section{
     max-width: 70%;
 
   }
+  .webkit-fill-av{
+    height: auto;
+  }
   .textBtn,
   .textBtnLast{
       font-size: 1em;
@@ -215,12 +221,10 @@ section{
   .slide-res{
     padding: 0;
   }
-
 }
 @media (max-width: 600px){
   .res-img img{
     max-width: 60%;
-
   }
   .res-img{
     display: flex;

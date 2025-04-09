@@ -42,7 +42,6 @@ function LoadingPage() {
       : slug === 'link-telegram-channel'
       ? 'Link Telegram Channel | TradeCoinVN'
       : `Tham gia sàn giao dịch ${slug} cùng TradeCoinVN để được hưởng nhiều quyền lợi và cơ hội trong việc đầu tư của bạn`;
-
   return (
     <>
       <SEO 

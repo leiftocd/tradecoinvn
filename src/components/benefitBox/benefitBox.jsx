@@ -21,8 +21,7 @@ function BenefitBox({ spanText, srcImg, titleText, id, activeBox, onBoxClick }) 
                 onClick={isMobile ? handleClick : null} 
             >
                 <div
-                    style={{ height: '-webkit-fill-available' }}
-                    className="flex rounded-[30px] bg-gradient-to-r from-[rgba(17,93,242,0.16)] to-[rgba(0,233,236,0.16)] bene-box relative"
+                    className="webkit-fill-av flex rounded-[30px] bg-gradient-to-r from-[rgba(17,93,242,0.16)] to-[rgba(0,233,236,0.16)] bene-box relative"
                 >
                     <div className="flex flex-col relative w-full">
                         <div className="beneBox-hidden w-full flex items-center border-white border-l-2 h-[60px]">
