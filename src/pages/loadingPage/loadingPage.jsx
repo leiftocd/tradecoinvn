@@ -6,7 +6,6 @@ import SEO from '../../components/Seo/Seo.jsx';
 
 function LoadingPage() {
   const { slug } = useParams(); // Get the slug from the URL
-
   useEffect(() => {
     // Define external URLs based on slug
     const externalLinks = {
@@ -43,7 +42,6 @@ function LoadingPage() {
           : `Tham gia sàn giao dịch ${slug} cùng TradeCoinVN để được hưởng nhiều quyền lợi và cơ hội trong việc đầu tư của bạn`}
         image="/logotitle.png" 
         url={window.location.href}
-
         // Open Graph meta tags
         ogTitle={slug === 'link-telegram-support' ? 'Link Telegram | TradeCoinVN' : `Tham gia sàn giao dịch ${slug} cùng TradeCoinVN`}
         ogDescription={slug === 'link-telegram-support' ? 'Link Telegram | TradeCoinVN' : `Tham gia sàn giao dịch ${slug} cùng TradeCoinVN`}
