@@ -1,25 +1,15 @@
 /* eslint-disable react/prop-types */
-import { Link } from 'react-router-dom';
 import '../components/button.css';
 
 function BannerBtn({ slug, href, text, className, spanBtn }) {
-  // Nếu có href, dùng <a> để redirect trực tiếp
-  if (href) {
-    return (
-      <a href={href} className={className} target='_self'>
-        <div className="flex">
-          <span className={spanBtn}>{text}</span>
-        </div>
-      </a>
-    );
-  }
-  // Nếu có slug, dùng <Link> để đi qua LoadingPage
+  const finalHref = href || `/${slug}.html`;
+
   return (
-    <Link to={`/${slug}`} className={className} target='_self'>
+    <a href={finalHref} className={className} target="_self">
       <div className="flex">
         <span className={spanBtn}>{text}</span>
       </div>
-    </Link>
+    </a>
   );
 }
 

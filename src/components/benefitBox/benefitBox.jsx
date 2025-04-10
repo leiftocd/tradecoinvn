@@ -29,7 +29,7 @@ function BenefitBox({ spanText, srcImg, titleText, id, activeBox, onBoxClick }) 
                                 {spanText}
                             </p>
                         </div>
-                        <div className="text-[30px] font-[700] text-white">
+                        <div className="text-[30px] font-[700] text-white max-sm:pl-[1.5rem]">
                             <h2 className="mt-[2rem] mb-[1.5rem] text-left">{titleText}</h2>
                         </div>
                         <div className="arrowM absolute">
@@ -41,12 +41,12 @@ function BenefitBox({ spanText, srcImg, titleText, id, activeBox, onBoxClick }) 
                                 }`}
                             />
                         </div>
-                        <div className="max-w-full relative opacity-[1] bottom-[1rem] mt-[2rem]">
+                        <div className="max-w-full relative opacity-[1] bottom-[1rem] mt-[2rem] img-hid-mb">
                             <img
                                 src={srcImg}
                                 alt="Benefit"
-                                className={`w-full object-cover transition-all duration-300 ${
-                                    isHovered || isActive ? 'block' : 'hidden'
+                                className={`w-full object-cover transition-all duration-300  ${
+                                    isHovered || isActive ? 'block' : 'hidden' 
                                 }`}
                             />
                         </div>

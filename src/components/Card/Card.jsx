@@ -2,13 +2,11 @@
 import clsx from "clsx";
 import { forwardRef } from "react";
 import './card.css';
-import { Link } from "react-router-dom";
 
 const Card = forwardRef(
   ({ className, slug, imgOnly, title, img, description, ...props }, ref) => {
-    // Luôn dùng slug và đi qua LoadingPage với /:slug
     return (
-      <Link to={`/${slug}`} ref={ref} {...props}>
+      <a href={`/${slug}.html`} ref={ref} {...props}>
         <div
           className={clsx(
             {
@@ -25,7 +23,7 @@ const Card = forwardRef(
             <p className="text-description p-market-res">{description}</p>
           )}
         </div>
-      </Link>
+      </a>
     );
   }
 );

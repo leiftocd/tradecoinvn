@@ -1,29 +1,29 @@
-// server.jsx (giả sử dùng Express)
-import express from 'express';
-import fs from 'fs'
-import { renderToString } from 'react-dom/server';
-import { HelmetProvider } from 'react-helmet-async';
-import App from './App';
-import { seoData } from './src/seoData.js';
+// api/server.js
+const express = require('express');
+const path = require('path');
+const fs = require('fs');
 const app = express();
-app.get('*', (req, res) => {
-  const slug = req.path.split('/').pop();
-  const meta = seoData[slug] || {
-    title: 'Trang chủ - TRADECOINVN',
-    description: 'Tham gia TRADECOINVN - Cộng đồng Crypto hàng đầu Việt Nam để nhận nhiều lợi ích và cơ hội đầu tư.',
-    image: '/logotitle.png'
-  };
-  const helmetContext = {};
-  const appHtml = renderToString(
-    <HelmetProvider context={helmetContext}>
-      <App meta={meta} />
-    </HelmetProvider>
-  );
-  const { helmet } = helmetContext;
-  let html = fs.readFileSync('./dist/index.html', 'utf8');
-  html = html
-    .replace('<!--ssr-head-->', `${helmet.title.toString()}${helmet.meta.toString()}`)
-    .replace('<!--ssr-body-->', appHtml);
 
-  res.send(html);
+// Redirect từ /slug.html về /slug
+app.get('/:slug.html', (req, res) => {
+  res.redirect(301, `/${req.params.slug}`);
 });
+
+// Route xử lý slug không cần .html
+app.get('/:slug', (req, res, next) => {
+  const filePath = path.join(__dirname, '..', 'public', `${req.params.slug}.html`);
+  if (fs.existsSync(filePath)) {
+    res.sendFile(filePath);
+  } else {
+    next();
+  }
+});
+// Serve static assets
+// app.use(express.static(path.join(__dirname, '..', 'public')));
+// app.use(express.static(path.join(__dirname, '..', 'dist')));
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '..', 'public', 'index.html'));
+});
+
+// Xuất app cho Vercel
+module.exports = app;

@@ -21,6 +21,7 @@ body {
   width: 100%;
   height: 100%;
   background-image: url('../public//bg.jpg');
+  background-position-y: center;
 }
 section{
   margin-bottom: 2rem;
@@ -225,6 +226,9 @@ section{
 @media (max-width: 600px){
   .res-img img{
     max-width: 60%;
+  }
+  .img-hid-mb{
+    margin-top: 0 !important;
   }
   .res-img{
     display: flex;
