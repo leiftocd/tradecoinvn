@@ -273,10 +273,11 @@ section{
     align-items: center;
     justify-content: center;
     position: absolute;
-    top: 5%;
+    transform:  translateY(50%);
     right: 0rem;
     z-index: 10;
   }
+
   .footer-res{
     flex-direction: column;
   }
@@ -305,7 +306,7 @@ section{
   .bannerBtnLast,
   .bannerBtn{
     width: 100%;
-    max-width: 90% !important;
+    max-width: 80% !important;
   }
   .benefit-tit{
     font-size: 5vw;
@@ -353,7 +354,7 @@ section{
     font-size: 1.6rem !important;
   }
   .bene-box {
-    padding: 1.5rem !important;
+    padding: 1.3rem !important;
   }
   #beneBox > div {
     margin: 0;

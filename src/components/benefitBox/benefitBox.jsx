@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import Arrow from '../../../public/arrow.png';
 import { useState } from 'react';
-
+import '../../../src/index.css'
 function BenefitBox({ spanText, srcImg, titleText, id, activeBox, onBoxClick }) {
     const [isHovered, setIsHovered] = useState(false);
     const isMobile = typeof window !== 'undefined' && window.matchMedia('(max-width: 1024px)').matches;
@@ -29,14 +29,14 @@ function BenefitBox({ spanText, srcImg, titleText, id, activeBox, onBoxClick }) 
                                 {spanText}
                             </p>
                         </div>
-                        <div className="text-[30px] font-[700] text-white max-sm:pl-[1.5rem]">
+                        <div className="text-[30px] font-[700] text-white max-sm:pl-[1.5rem] max-sm:pb-[1rem]">
                             <h2 className="mt-[2rem] mb-[1.5rem] text-left">{titleText}</h2>
                         </div>
                         <div className="arrowM absolute">
                             <img
                                 src={Arrow}
-                                alt=""
-                                className={`transition-all duration-500 ${
+                                alt="arrow"
+                                className={`transition-all duration-500 max-w-[80%] ${
                                     isHovered || isActive ? '-rotate-180 opacity-[1]' : 'rotate-0 opacity-[.6]'
                                 }`}
                             />
@@ -53,13 +53,13 @@ function BenefitBox({ spanText, srcImg, titleText, id, activeBox, onBoxClick }) 
                     </div>
                     <div
                         className={`arrow absolute transition-all duration-1000 ${
-                            isHovered || isActive ? 'left-[85%] bottom-[90%]' : 'left-[40%] bottom-[0]'
+                            isHovered || isActive ? 'left-[85%] bottom-[90%]  ' : 'left-[40%] bottom-[0] translate-y-[0]'
                         }`}
                     >
                         <img
                             src={Arrow}
                             alt=""
-                            className={`transition-all duration-300 ${
+                            className={`transition-all duration-300 w-[85%] ${
                                 isHovered || isActive ? 'rotate-180' : 'rotate-0'
                             }`}
                         />
