@@ -12,5 +12,8 @@
       "dest": "/api/server.js"
     }
   ],
+  "rewrites": [
+    { "source": "/:slug", "destination": "/:slug.html" }
+  ],
   "public": true
 }
