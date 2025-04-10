@@ -26,9 +26,8 @@ body {
 section{
   margin-bottom: 2rem;
 }
-.banner{
-  padding: 3rem 5vw;
-  margin: 0 auto;
+#benefit{
+  margin-bottom: 6rem;
 }
 .bene-box{
   padding: 3rem 3rem 7rem;
@@ -38,7 +37,7 @@ section{
   display: flex;
 }
 .banner {
-  padding: 2vw 4vw 10rem;
+  padding: 2vw 4vw 3rem;
   margin: 0 auto;
 }
 .slide-content {
@@ -357,7 +356,7 @@ section{
     padding: 1.5rem !important;
   }
   #beneBox > div {
-    margin: .5rem 0;
+    margin: 0;
   }
   .left-img{
     left: -8%;

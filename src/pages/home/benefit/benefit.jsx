@@ -12,7 +12,7 @@ function Benefit() {
     };
 
     return (
-        <section>
+        <section id='benefit'>
             <div className="flex flex-col mx-[auto] px-[3rem] gap-[3rem] max-w-[108rem] bene">
                 <div className="inline-flex items-center justify-center max-md:items-start max-md:justify-center">
                     <div className="flex pt-[5px]">

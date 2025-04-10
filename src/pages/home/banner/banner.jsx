@@ -49,11 +49,11 @@ function Banner() {
                             >
                                 <img src={BannerContentBg} alt="" className='max-w-[100%]' loading='lazy'/>
                             </div>
-                            <div className=' flex flex-col w-full gap-[1rem] items-start pr-[5%] mid
+                            <div className=' flex flex-col w-full gap-[1rem] items-center pr-[5%] mid
                             max-sm:gap-[1rem] max-sm:px-[0]'>
                                 <BannerBtn slug={'link-telegram-channel'}
                                     text="Channel Telegram TradeCoinVN"
-                                    className=" bannerBtn flex items-center justify-center max-w-[26.5rem] 
+                                    className=" bannerBtn flex items-center justify-center max-w-[27.5rem] max-xl:max-w-[26.5rem] 
                                     
                                     "
                                     spanBtn="textBtn  
