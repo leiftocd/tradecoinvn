@@ -1,21 +1,28 @@
+//server.js
 const express = require('express');
 const path = require('path');
-const serverless = require('serverless-http');
-
+const fs = require('fs');
 const app = express();
-const router = express.Router();
+const PORT = 3000;
 
-const distPath = path.join(__dirname, '..', 'dist'); // adjust if needed
+// Serve static files (images, CSS, JS)
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'dist')));
 
-// Serve static files (JS, CSS, etc.)
-app.use(express.static(distPath));
-
-// Fallback: React handles the routing
-router.get('*', (req, res) => {
-  res.sendFile(path.join(distPath, 'index.html'));
+// Nếu có slug trùng với file .html → trả về file đó
+app.get('/:slug', (req, res, next) => {
+  const htmlFile = path.join(__dirname, 'public', `${req.params.slug}.html`);
+  if (fs.existsSync(htmlFile)) {
+    return res.sendFile(htmlFile);
+  } else {
+    return next();
+  }
+});
+// Route fallback cho SPA (React)
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
 
-app.use('/', router);
-
-module.exports = app;
-module.exports.handler = serverless(app);
+app.listen(PORT, () => {
+  console.log(` Server is running at http://localhost:${PORT}`);
+});
