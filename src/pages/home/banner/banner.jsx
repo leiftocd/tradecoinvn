@@ -20,7 +20,7 @@ function Banner() {
             <div className=" flex w-full justify-center
             max-sm:gap-[3rem]
             ">
-                <div className=' banner-img w-full flex items-center max-w-[20%] 
+                <div className=' banner-img w-full flex items-center max-w-[22%] 
                 max-sm:hidden
                 '>
                     <img src={BannerImgLeft} alt="banner" className=' w-full ' loading='lazy'/>
@@ -88,7 +88,7 @@ function Banner() {
                         </div>
                     </div>
                 </div>
-                <div className=" banner-img w-full flex items-center max-w-[20%] 
+                <div className=" banner-img w-full flex items-center max-w-[22%] 
                 max-sm:hidden
                 ">
                     <img src={BannerImgRight} alt="banner" className=' w-full ' loading='lazy'/>
