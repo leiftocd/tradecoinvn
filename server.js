@@ -18,7 +18,6 @@ app.get('/:slug', (req, res, next) => {
     return next();
   }
 });
-
 // Route fallback cho SPA (React)
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'dist', 'index.html'));
