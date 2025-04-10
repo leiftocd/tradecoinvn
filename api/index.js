@@ -8,13 +8,16 @@ const app = express();
 // Path to dist folder (Vite build output)
 const distPath = path.join(__dirname, '..', 'dist');
 
-// Optional: Dynamic slug handling (e.g., /btc, /eth)
-app.get('/:slug', (req, res) => {
-  const filePath = path.join(distPath, `${req.params.slug}.html`);
+// Handle specific slugs (e.g., /Binance, /BingX, etc.)
+app.get('/:slug(Binance|BingX|Hashkey|OKX|MEXC|BYBIT|BitGet|link-telegram-channel|link-telegram-support)', (req, res) => {
+  const slug = req.params.slug;
+  const filePath = path.join(distPath, `${slug}.html`);
+  
+  // Check if a specific HTML file exists for the slug
   if (fs.existsSync(filePath)) {
     res.sendFile(filePath);
   } else {
-    // Fallback to index.html for React Router
+    // Fallback to index.html if no specific file exists
     res.sendFile(path.join(distPath, 'index.html'));
   }
 });
