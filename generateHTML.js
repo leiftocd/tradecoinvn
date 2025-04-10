@@ -3,13 +3,13 @@ const path = require('path');
 const seoData = require('./src/seoData');
 const outputDir = path.join(__dirname, 'public');
 
-// Template trả về nội dung HTML
 const template = ({ title, description, image, url, redirectUrl }) => `
 <!DOCTYPE html>
 <html lang="vi">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="refresh" content="1.5;url=${redirectUrl}" /> <!-- Chuyển hướng sau 1.5s -->
     <title>${title}</title>
     <meta name="description" content="${description}" />
     <meta property="og:title" content="${title}" />
@@ -17,11 +17,6 @@ const template = ({ title, description, image, url, redirectUrl }) => `
     <meta property="og:image" content="${image}" />
     <meta property="og:url" content="${url}" />
     <link rel="stylesheet" href="/loading.css" />
-    <script>
-      setTimeout(() => {
-        window.location.href = "${redirectUrl}";
-      }, 1500);
-    </script>
   </head>
   <body>
     <section class="loading-screen">
@@ -30,7 +25,7 @@ const template = ({ title, description, image, url, redirectUrl }) => `
   </body>
 </html>
 `;
-// lặp qua các slug để tạo file HTML
+
 Object.entries(seoData).forEach(([slug, data]) => {
   const htmlContent = template({
     title: data.title,
@@ -40,7 +35,6 @@ Object.entries(seoData).forEach(([slug, data]) => {
     redirectUrl: data.url,
   });
 
-  // Ghi file vào thư mục public
   fs.writeFileSync(path.join(outputDir, `${slug}.html`), htmlContent, 'utf8');
-  console.log(`✅ Created: ${slug}.html`);
+  console.log(` Created: ${slug}.html`);
 });

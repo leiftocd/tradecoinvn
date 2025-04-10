@@ -6,7 +6,7 @@ import './card.css';
 const Card = forwardRef(
   ({ className, slug, imgOnly, title, img, description, ...props }, ref) => {
     return (
-      <a href={`/${slug}.html`} ref={ref} {...props}>
+      <a rel="noreferrer" href={`/${slug}.html`} ref={ref} {...props}>
         <div
           className={clsx(
             {

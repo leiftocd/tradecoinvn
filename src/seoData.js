@@ -8,7 +8,6 @@ const SeoData ={
       title: 'Link Telegram | TradeCoinVN',
       description: 'Link Telegram | TradeCoinVN',
       url: 'https://t.me/TCVN_Support',
-
     },
     'BingX': {
         title: 'Tham gia sàn giao dịch BingX cùng TradeCoinVN',

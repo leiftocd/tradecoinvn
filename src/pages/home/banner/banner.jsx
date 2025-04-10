@@ -5,7 +5,6 @@ import BannerContentBg from '../../../../public/bannerContentBg.png'
 import WebsiteImg from '../../../../public/website.png'
 import YoutubeImg from '../../../../public/ytb.png'
 import TwitterImg from '../../../../public/x.png'
-
 import BannerBtn from '../../../components/bannerBtn.jsx'
 
 function Banner() {
