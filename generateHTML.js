@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
-const seoData = require('./src/seoData'); // Dữ liệu SEO
-const outputDir = path.join(__dirname, 'public'); // Output vào thư mục public
+const seoData = require('./src/seoData');
+const outputDir = path.join(__dirname, 'public');
 
 // Template trả về nội dung HTML
 const template = ({ title, description, image, url, redirectUrl }) => `
@@ -30,8 +30,7 @@ const template = ({ title, description, image, url, redirectUrl }) => `
   </body>
 </html>
 `;
-
-// Vòng lặp qua các slug để tạo file HTML
+// lặp qua các slug để tạo file HTML
 Object.entries(seoData).forEach(([slug, data]) => {
   const htmlContent = template({
     title: data.title,
@@ -41,7 +40,7 @@ Object.entries(seoData).forEach(([slug, data]) => {
     redirectUrl: data.url,
   });
 
-  // ✅ Ghi file vào thư mục public
+  // Ghi file vào thư mục public
   fs.writeFileSync(path.join(outputDir, `${slug}.html`), htmlContent, 'utf8');
   console.log(`✅ Created: ${slug}.html`);
 });
