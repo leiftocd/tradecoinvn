@@ -1,4 +1,3 @@
-// index.js
 const express = require('express');
 const path = require('path');
 const fs = require('fs');
@@ -7,15 +6,13 @@ const serverless = require('serverless-http');
 const app = express();
 const router = express.Router();
 
-// Đường dẫn thư mục build từ Vite
+// Đường dẫn đến thư mục dist (sau khi build từ Vite)
 const distPath = path.join(__dirname, '..', 'dist');
-const publicPath = path.join(__dirname, 'public');
 
-// Serve static files từ React (dist) và từ public (ảnh, css phụ)
+// Serve static files (React build) từ dist
 app.use(express.static(distPath));
-app.use(express.static(publicPath));
 
-// Route gốc: trả về React app (index.html của Vite)
+// Route gốc: Trả về React app (index.html từ Vite)
 router.get('/', (req, res) => {
   const indexPath = path.join(distPath, 'index.html');
   if (fs.existsSync(indexPath)) {
@@ -25,14 +22,9 @@ router.get('/', (req, res) => {
   }
 });
 
-// Redirect từ /slug.html → /slug (cho đẹp URL)
-router.get('/:slug.html', (req, res) => {
-  res.redirect(301, `/${req.params.slug}`);
-});
-
-// Route xử lý slug (VD: /btc, /eth, ...) → trả về file public/btc.html nếu có
+// Route xử lý slug (VD: /btc, /eth, ...) → trả về file tĩnh trong dist/btc.html nếu có
 router.get('/:slug', (req, res, next) => {
-  const filePath = path.join(publicPath, `${req.params.slug}.html`);
+  const filePath = path.join(distPath, `${req.params.slug}.html`);
   if (fs.existsSync(filePath)) {
     res.sendFile(filePath);
   } else {
