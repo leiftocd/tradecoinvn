@@ -13,7 +13,7 @@
     }
   ],
   "rewrites": [
-    { "source": "/:slug", "destination": "/:slug.html" }
+    { "source": "/:slug", "destination": "/api/index" }
   ],
   "public": true
 }
