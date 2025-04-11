@@ -24,10 +24,7 @@
     },
     {
       "src": "/(.*)",
-      "dest": "/api/index.js"
+      "dest": "/dist/index.html"
     }
-  ],
-  "staticBuild": {
-    "distDir": "dist"
-  }
+  ]
 }

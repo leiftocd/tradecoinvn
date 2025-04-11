@@ -11,9 +11,8 @@ export default defineConfig(({ mode }) => {
   } else if (process.env.VERCEL_URL) {
     baseUrl = `https://${process.env.VERCEL_URL}`;
   } else {
-    baseUrl = config.Domain;
+    baseUrl = config.Domain || '/';
   }
-
   return {
     plugins: [
       react(),
@@ -27,9 +26,11 @@ export default defineConfig(({ mode }) => {
         },
       }),
     ],
+    base: '/', 
     build: {
+      outDir: 'dist', 
       rollupOptions: {
-        input: 'index.html', // chỉ cần trang chính cho React app
+        input: 'index.html', 
       },
     },
   };
