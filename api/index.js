@@ -4,14 +4,15 @@ const path = require('path');
 const fs = require('fs');
 
 const app = express();
-const distPath = path.resolve(__dirname, '../dist');
+
+const distPath = path.join(__dirname, '..', 'dist');
 
 app.use(express.static(distPath));
 
 app.get('/:slug(Binance|BingX|Hashkey|OKX|MEXC|BYBIT|BitGet|link-telegram-channel|link-telegram-support)', (req, res) => {
   const slug = req.params.slug;
   const filePath = path.join(distPath, `${slug}.html`);
-
+  
   if (fs.existsSync(filePath)) {
     return res.sendFile(filePath);
   } else {
@@ -23,4 +24,5 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(distPath, 'index.html'));
 });
 
-module.exports = serverless(app);
+// Export for Vercel serverless
+module.exports.handler = serverless(app);
