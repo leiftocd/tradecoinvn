@@ -5,30 +5,28 @@ const fs = require('fs');
 
 const app = express();
 
-// Path to dist folder (Vite build output)
 const distPath = path.join(__dirname, '..', 'dist');
+const publicPath = path.join(__dirname, '..', 'public');
 
-// Serve static files (JS, CSS, etc.) from the dist folder
+// Serve static files
 app.use(express.static(distPath));
+app.use(express.static(publicPath));
 
-// Handle specific slugs (e.g., /Binance, /BingX, etc.)
+// Serve slug-specific HTML files
 app.get('/:slug(Binance|BingX|Hashkey|OKX|MEXC|BYBIT|BitGet|link-telegram-channel|link-telegram-support)', (req, res) => {
   const slug = req.params.slug;
   const filePath = path.join(distPath, `${slug}.html`);
-  
-  // Check if a specific HTML file exists for the slug
   if (fs.existsSync(filePath)) {
     return res.sendFile(filePath);
   } else {
-    // Fallback to index.html if no specific file exists
     return res.sendFile(path.join(distPath, 'index.html'));
   }
 });
 
-// For all other paths, serve index.html (SPA behavior)
+// Fallback to SPA
 app.get('*', (req, res) => {
   res.sendFile(path.join(distPath, 'index.html'));
 });
 
-// Export for Vercel serverless
-module.exports.handler = serverless(app);
+// ✅ Export serverless function correctly for Vercel
+module.exports = serverless(app);
