@@ -9,13 +9,12 @@ const publicPath = path.join(__dirname, '..', 'public');
 
 app.get('/:slug', (req, res, next) => {
   const slug = req.params.slug;
-
   const publicHtml = path.join(publicPath, `${slug}.html`);
+  const distHtml = path.join(distPath, `${slug}.html`);
+
   if (fs.existsSync(publicHtml)) {
     return res.sendFile(publicHtml);
   }
-
-  const distHtml = path.join(distPath, `${slug}.html`);
   if (fs.existsSync(distHtml)) {
     return res.sendFile(distHtml);
   }
