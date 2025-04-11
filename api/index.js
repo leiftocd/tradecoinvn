@@ -4,9 +4,14 @@ const fs = require('fs');
 
 const app = express();
 
-const distPath = path.join(__dirname, '..', 'dist');
 const publicPath = path.join(__dirname, '..', 'public');
+const distPath = path.join(__dirname, '..', 'dist');
 
+// Serve static files
+app.use(express.static(publicPath));
+app.use(express.static(distPath));
+
+// Handle slug-based routes
 app.get('/:slug', (req, res, next) => {
   const slug = req.params.slug;
   const publicHtml = path.join(publicPath, `${slug}.html`);
@@ -19,16 +24,12 @@ app.get('/:slug', (req, res, next) => {
     return res.sendFile(distHtml);
   }
 
-  return next(); 
+  return next();
 });
 
-app.use(express.static(distPath));
-app.use(express.static(publicPath));
-
+// Fallback for SPA
 app.get('*', (req, res) => {
   res.sendFile(path.join(distPath, 'index.html'));
 });
 
-module.exports = (req, res) => {
-  return app(req, res);
-};
+module.exports = app;

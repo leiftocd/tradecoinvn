@@ -8,8 +8,14 @@
   ],
   "routes": [
     {
+      "src": "/(.*)\\.html",
+      "dest": "/$1"
+    },
+    {
       "src": "/(.*)",
       "dest": "/api/index.js"
     }
-  ]
+  ],
+  "cleanUrls": true,
+  "trailingSlash": false
 }
