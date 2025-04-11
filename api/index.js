@@ -1,4 +1,3 @@
-const serverless = require('serverless-http');
 const express = require('express');
 const path = require('path');
 const fs = require('fs');
@@ -12,7 +11,7 @@ const publicPath = path.join(__dirname, '..', 'public');
 app.use(express.static(distPath));
 app.use(express.static(publicPath));
 
-// Serve slug-specific HTML files
+// Slug-specific HTML files
 app.get('/:slug(Binance|BingX|Hashkey|OKX|MEXC|BYBIT|BitGet|link-telegram-channel|link-telegram-support)', (req, res) => {
   const slug = req.params.slug;
   const filePath = path.join(distPath, `${slug}.html`);
@@ -28,5 +27,5 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(distPath, 'index.html'));
 });
 
-// ✅ Export serverless function correctly for Vercel
-module.exports = serverless(app);
+// ✅ Export app directly for Vercel (this is key)
+module.exports = app;
