@@ -21,10 +21,13 @@
       "status": 301
     },
     {
+      "src": "/(.*)/",
+      "dest": "/$1",
+      "status": 301
+    },
+    {
       "src": "/(.*)",
       "dest": "/api/index.js"
     }
-  ],
-  "cleanUrls": true,
-  "trailingSlash": false
+  ]
 }
