@@ -7,7 +7,6 @@ function App() {
         <Router>
           <Routes>
             <Route path="/" element={<Home />} />
-            {/* <Route path="/redirect" element={<LoadingPage />} /> */}
             <Route path="/:slug" element={<LoadingPage />} />
           </Routes>
         </Router>
