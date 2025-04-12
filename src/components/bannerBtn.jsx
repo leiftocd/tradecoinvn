@@ -6,7 +6,7 @@ function BannerBtn({ slug, href, text, className, spanBtn }) {
   // Nếu có href, dùng <a> để redirect trực tiếp
   if (href) {
     return (
-      <a href={href} className={className}>
+      <a href={href} className={className} target='_self'>
         <div className="flex">
           <span className={spanBtn}>{text}</span>
         </div>
@@ -15,7 +15,7 @@ function BannerBtn({ slug, href, text, className, spanBtn }) {
   }
   // Nếu có slug, dùng <Link> để đi qua LoadingPage
   return (
-    <Link to={`/${slug}`} className={className}>
+    <Link to={`/${slug}`} className={className} target='_self'>
       <div className="flex">
         <span className={spanBtn}>{text}</span>
       </div>
